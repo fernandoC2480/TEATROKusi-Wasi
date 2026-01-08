@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.imgtienda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.imgtienda img {
+    width: 100%;
+    max-width: 65%;
+    height: auto;
+    object-fit: contain;
+}
+.titulo p{
+    color: #FF9B00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-family: Alegreya Sans SC, sans-serif;
+    text-decoration: underline ;
+    text-decoration-color: #ffffff ;
+    text-decoration-thickness: 1px ;
+    text-underline-offset: 8px;
+}
+
