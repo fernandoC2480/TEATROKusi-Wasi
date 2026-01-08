@@ -6,7 +6,7 @@
     <title>Teatro Andino Kusiwasi</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/estilos_index.css">
+    <link rel="stylesheet" href="../../assets/css/estilos_index.css">
 </head>
 <body>
 
@@ -15,35 +15,35 @@
         <div class="container">
             <div class="row align-items-center py-3">
                 <div class="col-md-2 text-center text-md-start">
-                    <a href="../index.php" class="logo">
-                        <img src="../assets/img/logo.png" alt="Logo Kusiwasi">
+                    <a href="../../index.php" class="logo">
+                        <img src="../../assets/img/logo.png" alt="Logo Kusiwasi">
                     </a>
                 </div>
                 <nav class="col-md-10">
                     <ul class="nav-links">
-                        <li><a href="../index.php">Inicio</a></li>
-                        <li><a href="../pages/cartelera.php">Shows</a></li>
-                        <li><a href="../pages/tienda.php">Tienda</a></li>
+                        <li><a href="../../index.php">Inicio</a></li>
+                        <li><a href="../../pages/cartelera.php">Shows</a></li>
+                        <li><a href="../../pages/tienda.php">Tienda</a></li>
                         
                         <!-- Submenú Proyectos -->
                         <li class="has-submenu">
-                            <a href="../pages/proyectos.php">Proyectos</a>
+                            <a href="../../pages/proyectos.php">Proyectos</a>
                             <ul class="submenu">
-                                <li><a href="#">Taller de Teatro</a></li>
-                                <li><a href="#">Taller de Música</a></li>
+                                <li><a href="../../pages/proyectos/tallerteatro.php">Taller de Teatro</a></li>
+                                <li><a href="../../pages/proyectos/tallermusica.php">Taller de Música</a></li>
                             </ul>
                         </li>
 
                         <!-- Submenú Nosotros -->
                         <li class="has-submenu">
-                            <a href="../pages/nosotros.php">Nosotros</a>
+                            <a href="../../pages/nosotros.php">Nosotros</a>
                             <ul class="submenu">
-                                <li><a href="../pages/historia.php">Historia</a></li>
-                                <li><a href="../pages/misionvision.php">Misión y Visión</a></li>
+                                <li><a href="../../pages/historia.php">Historia</a></li>
+                                <li><a href="../../pages/misionvision.php">Misión y Visión</a></li>
                             </ul>
                         </li>
 
-                        <li><a href="../pages/legal.php">Legal</a></li>
+                        <li><a href="../../pages/legal.php">Legal</a></li>
                         
                         <!-- Icono Login -->
                         <li>
