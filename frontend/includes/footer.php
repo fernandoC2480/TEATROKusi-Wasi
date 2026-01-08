@@ -10,6 +10,7 @@
                 <h5 class="footer-title">Información de Contacto</h5>
                 <ul class="footer-list">
                     <li>Dirección del teatro:</li>
+                    <li>Dirección del teatro:</li>
                     <li>Av. Tupac Amaru 742, San Sebastián,</li>
                     <li>Cusco, Perú</li>
                     <li>Teléfono de atención:</li>
