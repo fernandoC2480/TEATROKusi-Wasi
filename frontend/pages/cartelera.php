@@ -15,10 +15,10 @@
                 <!-- Card 1 -->
                 <div class="col">
                     <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
+                        <img src="../assets/img/imagencartelera1.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">El Regreso de los Dioses</h5>
-                            <p class="card-text">Contenido de la tarjeta 1 con el color CEAE7E.</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu velut exultatio volatilis per tentorium caeli.</p>
                         </div>
                     </div>
                 </div>

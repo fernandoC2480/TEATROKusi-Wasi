@@ -299,10 +299,21 @@ body {
     color: white;
     border: 1px solid #444;
 }
+.custom-card .card-img-top {
+    width: 360px;
+    height: 460px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
 .custom-card {
+    width: 360px;
     background-color: #272727 !important;
     border: none;
+    margin: auto;
 }
+
+
 
 /* Estilo para el título */
 .custom-card .card-title {
