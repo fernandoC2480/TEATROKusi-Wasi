@@ -7,6 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/estilos_index.css">
+    <?php
+    // Cargar CSS específico para páginas (ej. tienda)
+    $script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
+    if (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php') {
+        echo "<link rel=\"stylesheet\" href=\"../../assets/css/estios_tienda.css\">\n";
+        echo "<link rel=\"stylesheet\" href=\"../../assets/css/estilos_flecha.css\">\n";
+    }
+    ?>
 </head>
 <body>
 
