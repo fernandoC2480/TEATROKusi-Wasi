@@ -39,7 +39,7 @@ include 'includes/header.php';
                 <button>See More</button>
             </div>
         </div>
-        <div class="item" style="background-image: url(../assets/img/carrusel2.jpg);">
+        <div class="item" style="background-image: url(../assets/img/carruselgif.gif);">
             <div class="content">
                 <div class="name">Netherland</div>
                 <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
