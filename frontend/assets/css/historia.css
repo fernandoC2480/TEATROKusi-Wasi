@@ -1,0 +1,140 @@
+/* ===============================
+   CONTENEDOR GENERAL
+   =============================== */
+.historia-texto {
+    max-width: 900px;              /* MÁS ANGOSTO → mejor lectura */
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: #eaeaea;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;             /* TEXTO MÁS GRANDE */
+    line-height: 2;
+    text-align: justify;
+}
+
+/* ===============================
+   TÍTULO PRINCIPAL
+   =============================== */
+.historia-texto h1 {
+    font-family: 'Alegreya', serif;
+    color: #f2a900;
+    font-weight: 800;
+    font-size: 4.5rem;             /* MÁS GRANDE */
+    margin-bottom: 3rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;     /* CAMBIO VISIBLE */
+}
+
+/* ===============================
+   SECCIÓN OBJETIVOS
+   =============================== */
+.historia-texto h2 {
+    font-family: 'Alegreya', serif;
+    color: #f2a900;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    padding-left: 1rem;
+    border-left: 6px solid #f2a900; /* MUY VISIBLE */
+}
+
+/* ===============================
+   SUBTÍTULOS
+   =============================== */
+.historia-texto h3 {
+    font-family: 'Alegreya', serif;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===============================
+   PÁRRAFOS
+   =============================== */
+.historia-texto p {
+    margin-bottom: 2rem;
+}
+
+/* ===============================
+   BLOQUES DESTACADOS (OBJETIVOS)
+   =============================== */
+.historia-texto h3 + p,
+.historia-texto h3 + ul {
+    background: rgba(255, 255, 255, 0.03); /* FONDO SUTIL */
+    padding: 2rem 2.5rem;
+    margin-left: -2rem;                   /* ROMPE LA GRILLA */
+    margin-right: -2rem;
+    border-left: 6px solid #f2a900;
+    max-width: none;
+}
+
+/* ===============================
+   LISTAS
+   =============================== */
+.historia-texto ul {
+    padding-left: 1.5rem;
+}
+
+.historia-texto ul li {
+    margin-bottom: 1.3rem;
+    font-size: 1.05rem;
+}
+
+/* ===============================
+   TEXTO DESTACADO
+   =============================== */
+.historia-texto strong {
+    color: #f2a900;                        /* CAMBIO VISIBLE */
+    font-weight: 700;
+}
+
+/* ===============================
+   LETRA INICIAL MUY NOTORIA
+   =============================== */
+.historia-texto p:first-of-type::first-letter {
+    font-family: 'Alegreya', serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: #f2a900;
+    float: left;
+    margin-right: 1rem;
+    line-height: 1;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+    .historia-texto {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .historia-texto h1 {
+        font-size: 2.5rem;
+    }
+
+    .historia-texto h2 {
+        font-size: 1.9rem;
+    }
+
+    .historia-texto h3 {
+        font-size: 1.5rem;
+    }
+
+    .historia-texto h3 + p,
+    .historia-texto h3 + ul {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1.5rem;
+    }
+
+    .historia-texto p:first-of-type::first-letter {
+        float: none;
+        font-size: 3rem;
+        margin: 0;
+    }
+}
