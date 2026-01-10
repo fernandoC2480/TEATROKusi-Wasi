@@ -18,7 +18,10 @@
                         <img src="../assets/img/imagencartelera1.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">El Regreso de los Dioses</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu velut exultatio volatilis per tentorium caeli.</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            
+                            <!-- Este es el link que hace que toda la card sea cliqueable -->
+                            <a href="shows/show.php" class="stretched-link"></a>
                         </div>
                     </div>
                 </div>
