@@ -130,11 +130,71 @@ include 'includes/header.php';
         <img src="../assets/img/decoracion_nosotros.png" alt="patrones" class="patron1">
         <h1 class="texto-titulo2">Nosotros</h1>
 </div> 
-</body>
+ <!--parte nosotros card-->
+    <div class="card-wrapper">
+  <div class="cardN reveal-img">
+
+    <img src="../assets/img/img_nosotros.png" class="card-imgN img-reveal">
+
+    <div class="card-overlayN">
+      <div class="reveal-text">
+        <img src="../assets/img/decoracion_index.png" class="iconN">
+
+        <h3 class="card-titleN">Nuestra Historia</h3>
+
+        <p class="card-textN">
+          Aquí va una descripción más extensa con detalles,
+          fechas, artistas y contexto cultural del evento.
+        </p>
+
+        <button class="card-btnN">Saber más</button>
+      </div>
+    </div>
+
+  </div>
+    </div>
+    <!--parte proyectos-->
+<div class="proyectosM">
+  <h1 class="titulo_proyecto">Nuevos Proyectos</h1>
+
+  <!-- CARD 1 -->
+  <div class="proy1 reveal-card left">
+    <img src="../assets/img/cartas.jpg" class="img-anim">
+
+    <div class="inf1 text-anim">
+      <h3 class="t1">DIOS A</h3>
+
+      <p class="largo">
+        Aquí va una descripción más extensa con detalles,
+        fechas, artistas y contexto cultural del evento.
+      </p>
+
+      <button class="t2">Saber más</button>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="proy2 reveal-card right">
+    <img src="../assets/img/carta2.jpg" class="img-anim">
+
+    <div class="inf2 text-anim">
+      <h3 class="t1">LA BELLEZA</h3>
+
+      <p class="largo">
+        Información adicional de la actuación con
+        detalles relevantes para el público.
+      </p>
+
+      <button class="t2">Saber más</button>
+    </div>
+  </div>
+</div>
+<?php include 'includes/footer.php'; ?>
+
 <!--CONEXION CON JAVA-->
 <script src="assets/js/carruselindex.js"></script>
-<!--fin DEL BODY-->
+<script src="../../assets/js/nosotron_card.js"></script>
+<script src="../../assets/js/proyectos_card.js"></script>
 
-<?php
-include 'includes/footer.php';
-?>
+</body>
+</html>
