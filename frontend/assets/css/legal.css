@@ -1,0 +1,86 @@
+
+/* =========================
+   CONTENIDO LEGAL
+========================= */
+
+.legal-overlay h1 {
+    font-family: 'Alegreya', serif;
+    font-size: 4rem;
+    color: #f2a900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+main.container {
+    margin-top: 80px;
+}
+
+.legal-contenido {
+    margin-top: 2rem;
+}
+
+/* Cajas */
+.legal-box {
+    background: #111;
+    padding: 2rem;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.legal-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.8);
+}
+
+/* Subtítulos */
+.legal-subtitulo {
+    font-family: 'Alegreya', serif;
+    font-size: 1.6rem;
+    color: #f2a900;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Línea decorativa */
+.legal-subtitulo::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #f2a900;
+    margin-top: 8px;
+}
+
+/* Párrafos */
+.legal-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #ddd;
+    text-align: justify;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .legal-hero {
+        height: 300px;
+    }
+
+    .legal-overlay h1 {
+        font-size: 2.6rem;
+        text-align: center;
+    }
+
+    main.container {
+        margin-top: 40px;
+    }
+
+    .legal-box {
+        padding: 1.5rem;
+    }
+}
