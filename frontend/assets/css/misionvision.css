@@ -1,0 +1,148 @@
+/* ===============================
+   HERO IMAGEN MISIÓN / VISIÓN
+   =============================== */
+section {
+    position: relative;
+}
+
+section > img.img-fluid {
+    width: 100%;
+    height: 65vh;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.45) contrast(1.1);
+}
+
+/* Capa oscura cinematográfica */
+section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.9)
+    );
+    pointer-events: none;
+}
+
+/* ===============================
+   CONTENEDOR PRINCIPAL
+   =============================== */
+main.container {
+    margin-top: -6rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===============================
+   CAJA GENERAL DEL TEXTO
+   =============================== */
+.misionvision-texto {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    color: #e6e6e6;
+}
+
+/* ===============================
+   TÍTULOS (MISIÓN / VISIÓN)
+   =============================== */
+.misionvision-texto h1 {
+    font-family: 'Alegreya', serif;
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: #f2a900;
+    letter-spacing: 0.1em;
+    margin: 5rem 0 1.5rem;
+    position: relative;
+    animation: fadeDown 0.9s ease both;
+}
+
+/* Línea decorativa */
+.misionvision-texto h1::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    background-color: #f2a900;
+    margin-top: 0.8rem;
+}
+
+/* ===============================
+   BLOQUES DE TEXTO (IMPACTO REAL)
+   =============================== */
+.misionvision-texto p {
+    max-width: 900px;
+    margin-left: 4rem;
+    padding: 2.5rem 3rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 8px solid #f2a900;
+    font-size: 1.2rem;
+    line-height: 2;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    animation: fadeUp 1.1s ease both;
+}
+
+/* Separación entre bloques */
+.misionvision-texto h1 + p {
+    margin-bottom: 5rem;
+}
+
+/* ===============================
+   ANIMACIONES
+   =============================== */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+    section > img.img-fluid {
+        height: 45vh;
+    }
+
+    main.container {
+        margin-top: -3rem;
+    }
+
+    .misionvision-texto {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .misionvision-texto h1 {
+        font-size: 2.4rem;
+        margin-top: 3rem;
+    }
+
+    .misionvision-texto p {
+        margin-left: 0;
+        padding: 1.6rem;
+        font-size: 1rem;
+        border-left: 4px solid #f2a900;
+    }
+}
