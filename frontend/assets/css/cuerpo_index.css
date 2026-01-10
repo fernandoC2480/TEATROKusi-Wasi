@@ -224,10 +224,19 @@ h1, h2, h3 {
 
 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
 /* ================= CONTENIDO ================= */
+.reveal-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
 .reveal-text > * {
   opacity: 0;
   filter: blur(6px);
@@ -250,25 +259,28 @@ h1, h2, h3 {
 }
 
 .iconN {
-    position: absolute;
-    top: 60%;               
-    left: 10%;               
-    transform: translate(-50%, -50%);
-    width: 80px;            
+    transform: translate(20000px, 10px);
+    position: static;
+    transform: none;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 /* Título */
 .card-titleN {
   font-family: 'Caesar Dressing', cursive;
-  font-size: 60px;
+  font-size: 50px;
   color: #dd910d;
-  margin-bottom: 10px;
+  margin: 0 0 15px 0;
 }
 /* Texto */
 .card-textN {
   font-size: 15px;
   line-height: 1.6;
-  max-width: 600px;
-  margin-bottom: 20px;
+  max-width: 500px;
+  margin: 0 0 20px 0;
+  color: #ffffff;
 }
 
 /* Botón */
@@ -284,7 +296,7 @@ h1, h2, h3 {
   color: #ffffff;
 
   transition: all 0.3s ease;
-
+  align-self: flex-start;
 }
 
 .card-btnN:hover {
@@ -483,6 +495,71 @@ h1, h2, h3 {
 }
 
 /* ===================== BOTÓN ===================== */
+
+/* Estilos globales para todos los botones */
+button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  white-space: nowrap;
+
+  padding: 8px 22px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(145deg, #9d0606, #600000);
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+
+  box-shadow:
+    0 8px 20px rgba(157, 6, 6, 0.45),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(200, 123, 9, 0.35),
+    transparent
+  );
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 30px rgba(157, 6, 6, 0.7);
+}
+
+button:hover::after {
+  opacity: 1;
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow:
+    0 6px 15px rgba(157, 6, 6, 0.5);
+}
 
 .t2 {
   position: relative;

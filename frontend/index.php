@@ -83,7 +83,7 @@ include 'includes/header.php';
                         fechas, artistas y contexto cultural del evento.
                     </p>
 
-                    <button>Saber más</button>
+                    <button class="t2">Saber más</button>
                 </div>
     </div>
         <div class="actuacion">
@@ -101,7 +101,7 @@ include 'includes/header.php';
                         detalles relevantes para el público.
                     </p>
 
-                    <button>Saber más</button>
+                    <button class="t2">Saber más</button>
                 </div>
         </div>
         <div class="actuacion">
@@ -120,7 +120,7 @@ include 'includes/header.php';
                         artistas invitados y programación.
                     </p>
 
-                    <button>Saber más</button>
+                    <button class="t2">Saber más</button>
         </div>
     </div>    
 </div>
@@ -138,13 +138,12 @@ include 'includes/header.php';
 
     <div class="card-overlayN">
       <div class="reveal-text">
-        <img src="../assets/img/decoracion_index.png" class="iconN">
+        <img src="../assets/img/nosotros_icon.png" class="iconN">
 
         <h3 class="card-titleN">Nuestra Historia</h3>
 
         <p class="card-textN">
-          Aquí va una descripción más extensa con detalles,
-          fechas, artistas y contexto cultural del evento.
+         uiiia.
         </p>
 
         <button class="card-btnN">Saber más</button>
