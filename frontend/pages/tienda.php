@@ -13,6 +13,14 @@ $stmt = $conn->prepare($query);
 $stmt->execute();
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+    <?php
+    // Cargar CSS específico para páginas (ej. tienda)
+    $script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
+    if (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php') {
+        echo "<link rel=\"stylesheet\" href=\"../../assets/css/estios_tienda.css\">\n";
+        echo "<link rel=\"stylesheet\" href=\"../../assets/css/estilos_flecha.css\">\n";
+    }
+    ?>
 <main>
     <div class="imgtienda">
         <img src="../assets/img/imgcarrusel1.png" alt="">
