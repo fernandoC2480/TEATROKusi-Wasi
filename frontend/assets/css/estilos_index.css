@@ -176,14 +176,18 @@ body {
 
 /* --- 8. FOOTER --- */
 .site-footer {
+    position: relative;
+    width: 100%;
     background-color: #000;
     color: #fff;
     padding-top: 20px;
 }
 
 .imgfooter {
-    background: url('../img/bannerfoter.png') repeat-x center;
-    background-size: contain;
+    background-image: url('../img/bannerfoter.png');
+    background-repeat: repeat-x;
+    background-size: auto 60px;
+    background-position: center top;
     width: 100%;
     height: 60px;
     margin-bottom: 20px;
