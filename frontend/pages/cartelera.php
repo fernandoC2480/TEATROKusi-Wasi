@@ -1,5 +1,6 @@
 <?php include '../includes/header.php'; ?>
 <link rel="stylesheet" href="../assets/css/cuerpo_index.css">
+<link rel="stylesheet" href="../../assets/css/estilos_flecha.css">
 <main class="container my-5">
     <div>
         <div class="seccion-titulos">
@@ -176,5 +177,6 @@
         </div>
     </div>
 </main>
-
+<button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
+<script src="../assets/js/scroll-arrow.js"></script>
 <?php include '../includes/footer.php'; ?>

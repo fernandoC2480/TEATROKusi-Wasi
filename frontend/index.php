@@ -7,6 +7,7 @@ include 'includes/header.php';
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/estilos_flecha.css">
 <!--inicio de carrusel NO TOCAR porque funciona con fe-->
 <body>
 <div class="contenedor">
@@ -188,6 +189,8 @@ include 'includes/header.php';
     </div>
   </div>
 </div>
+<button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
+<script src="../assets/js/scroll-arrow.js"></script>
 <?php include 'includes/footer.php'; ?>
 
 <!--CONEXION CON JAVA-->

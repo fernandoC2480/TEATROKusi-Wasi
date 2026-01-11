@@ -1,4 +1,5 @@
 <?php include '../../includes/header.php'; ?>
+<link rel="stylesheet" href="../../assets/css/estilos_flecha.css">
 
 <!-- SECCIÓN DEL VIDEO -->
 <section class="video-hero bg-transparent">
@@ -98,4 +99,6 @@
         }
     });
 </script>
+<button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
+<script src="../assets/js/scroll-arrow.js"></script>
 <?php include '../../includes/footer.php'; ?>
