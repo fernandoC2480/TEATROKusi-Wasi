@@ -1,18 +1,5 @@
 <?php include '../../includes/header.php'; ?>
 
-<style>
-    body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                          url('../../assets/img/imgcarrusel1.png') !important;
-        background-attachment: fixed !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-        background-color: #000 !important; /* Color de respaldo */
-    }
-</style>
-
-
 <!-- SECCIÓN DEL VIDEO -->
 <section class="video-hero bg-transparent">
     <div class="container text-center py-4">

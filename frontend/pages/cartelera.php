@@ -1,5 +1,5 @@
 <?php include '../includes/header.php'; ?>
-
+<link rel="stylesheet" href="../assets/css/cuerpo_index.css">
 <main class="container my-5">
     <div>
         <div class="seccion-titulos">
@@ -11,40 +11,53 @@
             </div>
             
             <div class="seccion-frase">“Vive la magia de los Andes en cada show”</div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="actuaciones"> <!-- Contenedor principal que usa tu Grid de 3 columnas --> 
                 <!-- Card 1 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="../assets/img/imagencartelera1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">El Regreso de los Dioses</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            
-                            <!-- Este es el link que hace que toda la card sea cliqueable -->
-                            <a href="shows/show.php" class="stretched-link"></a>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/imagencartelera1.png" alt="El Regreso de los Dioses">
+                    <div class="info">
+                        <h3>EL REGRESO DE LOS DIOSES</h3>
+                        <p class="texto-corto">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                        <p class="texto-largo">
+                            Aquí va la descripción extendida que aparecerá al hacer hover, 
+                            detallando más sobre esta actuación específica.
+                        </p>
+                        <!-- He cambiado el button por un 'a' para que el link funcione -->
+                        <a href="shows/show.php" style="text-decoration: none;">
+                            <button class="t2">Saber más</button>
+                        </a>
                     </div>
                 </div>
-
                 <!-- Card 2 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Contenido de la tarjeta 2 con el color CEAE7E.</p>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/tu-imagen-2.jpg" alt="Título 2">
+                    <div class="info">
+                        <h3>TÍTULO DE LA CARD 2</h3>
+                        <p class="texto-corto">
+                            Descripción breve de la segunda tarjeta.
+                        </p>
+                        <p class="texto-largo">
+                            Contenido detallado de la tarjeta 2 con el color dorado y 
+                            el efecto de expansión que tienes en tu CSS.
+                        </p>
+                        <button class="t2">Saber más</button>
                     </div>
                 </div>
-
                 <!-- Card 3 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Contenido de la tarjeta 3 con el color CEAE7E.</p>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/tu-imagen-3.jpg" alt="Título 3">
+                    <div class="info">
+                        <h3>TÍTULO DE LA CARD 3</h3>
+                        <p class="texto-corto">
+                            Descripción breve de la tercera tarjeta.
+                        </p>
+                        <p class="texto-largo">
+                            Contenido detallado de la tarjeta 3. Al pasar el mouse, 
+                            el fondo se oscurecerá y subirá este texto.
+                        </p>
+                        <button class="t2">Saber más</button>
                     </div>
                 </div>
             </div>
@@ -54,37 +67,53 @@
                 <h1>Ecleciasticos</h1>
             </div>
             <div class="seccion-frase">“Tradición religiosa que inspira”</div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="actuaciones"> <!-- Contenedor principal que usa tu Grid de 3 columnas --> 
                 <!-- Card 1 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">El Regreso de los Dioses</h5>
-                            <p class="card-text">Contenido de la tarjeta 1 con el color CEAE7E.</p>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/imagencartelera1.png" alt="El Regreso de los Dioses">
+                    <div class="info">
+                        <h3>EL REGRESO DE LOS DIOSES</h3>
+                        <p class="texto-corto">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                        <p class="texto-largo">
+                            Aquí va la descripción extendida que aparecerá al hacer hover, 
+                            detallando más sobre esta actuación específica.
+                        </p>
+                        <!-- He cambiado el button por un 'a' para que el link funcione -->
+                        <a href="shows/show.php" style="text-decoration: none;">
+                            <button class="t2">Saber más</button>
+                        </a>
                     </div>
                 </div>
-
                 <!-- Card 2 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Contenido de la tarjeta 2 con el color CEAE7E.</p>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/tu-imagen-2.jpg" alt="Título 2">
+                    <div class="info">
+                        <h3>TÍTULO DE LA CARD 2</h3>
+                        <p class="texto-corto">
+                            Descripción breve de la segunda tarjeta.
+                        </p>
+                        <p class="texto-largo">
+                            Contenido detallado de la tarjeta 2 con el color dorado y 
+                            el efecto de expansión que tienes en tu CSS.
+                        </p>
+                        <button class="t2">Saber más</button>
                     </div>
                 </div>
-
                 <!-- Card 3 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Contenido de la tarjeta 3 con el color CEAE7E.</p>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/tu-imagen-3.jpg" alt="Título 3">
+                    <div class="info">
+                        <h3>TÍTULO DE LA CARD 3</h3>
+                        <p class="texto-corto">
+                            Descripción breve de la tercera tarjeta.
+                        </p>
+                        <p class="texto-largo">
+                            Contenido detallado de la tarjeta 3. Al pasar el mouse, 
+                            el fondo se oscurecerá y subirá este texto.
+                        </p>
+                        <button class="t2">Saber más</button>
                     </div>
                 </div>
             </div>
@@ -94,37 +123,53 @@
                 <h1>Ecológicos</h1>
             </div>
             <div class="seccion-frase">“Cultura y naturaleza en armonía.”</div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="actuaciones"> <!-- Contenedor principal que usa tu Grid de 3 columnas --> 
                 <!-- Card 1 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">El Regreso de los Dioses</h5>
-                            <p class="card-text">Contenido de la tarjeta 1 con el color CEAE7E.</p>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/imagencartelera1.png" alt="El Regreso de los Dioses">
+                    <div class="info">
+                        <h3>EL REGRESO DE LOS DIOSES</h3>
+                        <p class="texto-corto">
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                        <p class="texto-largo">
+                            Aquí va la descripción extendida que aparecerá al hacer hover, 
+                            detallando más sobre esta actuación específica.
+                        </p>
+                        <!-- He cambiado el button por un 'a' para que el link funcione -->
+                        <a href="shows/show.php" style="text-decoration: none;">
+                            <button class="t2">Saber más</button>
+                        </a>
                     </div>
                 </div>
-
                 <!-- Card 2 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Contenido de la tarjeta 2 con el color CEAE7E.</p>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/tu-imagen-2.jpg" alt="Título 2">
+                    <div class="info">
+                        <h3>TÍTULO DE LA CARD 2</h3>
+                        <p class="texto-corto">
+                            Descripción breve de la segunda tarjeta.
+                        </p>
+                        <p class="texto-largo">
+                            Contenido detallado de la tarjeta 2 con el color dorado y 
+                            el efecto de expansión que tienes en tu CSS.
+                        </p>
+                        <button class="t2">Saber más</button>
                     </div>
                 </div>
-
                 <!-- Card 3 -->
-                <div class="col">
-                    <div class="card h-100 custom-card">
-                        <img src="tu-imagen.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Contenido de la tarjeta 3 con el color CEAE7E.</p>
-                        </div>
+                <div class="actuacion">
+                    <img src="../assets/img/tu-imagen-3.jpg" alt="Título 3">
+                    <div class="info">
+                        <h3>TÍTULO DE LA CARD 3</h3>
+                        <p class="texto-corto">
+                            Descripción breve de la tercera tarjeta.
+                        </p>
+                        <p class="texto-largo">
+                            Contenido detallado de la tarjeta 3. Al pasar el mouse, 
+                            el fondo se oscurecerá y subirá este texto.
+                        </p>
+                        <button class="t2">Saber más</button>
                     </div>
                 </div>
             </div>
