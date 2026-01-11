@@ -1,13 +1,10 @@
 <?php include '../includes/header.php'; ?>
 
-</head>
 <link rel="stylesheet" href="/assets/css/historia.css">
 
- <section >
-    <img src="/assets/img/historia.png" class="img-fluid" width="1500" alt="Historia del Teatro">
-</section>
-
-
+<!-- HERO / IMAGEN FULL WIDTH -->
+<section class="hero-historia">
+    <img src="/assets/img/historia.png" alt="Historia del Teatro Andino Kusi Wasi">
 </section>
 
 <main class="container my-5">
@@ -38,21 +35,17 @@
 
         <p>
             Entre sus producciones más representativas destaca la obra
-            <strong>“El Florecimiento de los Dioses Andinos”</strong>, considerada su obra maestra, que narra
-            el retorno simbólico de las deidades andinas —Sol, Luna, Tierra y Rayo— para restablecer la
-            armonía de los pueblos que han perdido sus costumbres ancestrales.
+            <strong>“El Florecimiento de los Dioses Andinos”</strong>, considerada su obra maestra.
         </p>
 
         <p>
             Asimismo, el grupo ha producido obras de temática ecológica, costumbrista y socio-religiosa,
-            y ha desarrollado talleres gratuitos de teatro, música y danza, orientados a la formación de
-            nuevos artistas.
+            y ha desarrollado talleres gratuitos de teatro, música y danza.
         </p>
 
         <p>
             Antes de la emergencia sanitaria, el Teatro Andino Kusi Wasi brindó empleo a diversos artistas
-            y mantuvo una intensa actividad cultural, logrando un sólido posicionamiento en el mercado
-            gracias a la calidad artística, la responsabilidad y la puntualidad que caracterizan su trabajo.
+            y mantuvo una intensa actividad cultural.
         </p>
 
         <h2>Objetivos</h2>
@@ -61,25 +54,22 @@
 
         <p>
             Crear, promover y difundir producciones escénicas basadas en la cultura
-            ancestral andina, fortaleciendo la identidad cultural y generando
-            oportunidades de desarrollo artístico y económico para los integrantes
-            del teatro.
+            ancestral andina.
         </p>
 
         <h3>Objetivos Específicos</h3>
 
         <ul>
-            <li>Realizar creaciones colectivas inspiradas en hechos históricos, mitológicos y culturales de la cosmovisión andina.</li>
-            <li>Brindar a los artistas una actividad alternativa remunerada que contribuya al sustento de sus familias.</li>
-            <li>Difundir el arte escénico andino a todo tipo de público, sin distinción de edad, condición social o procedencia.</li>
-            <li>Cultivar, preservar y revalorar la cultura ancestral andina y socio-religiosa.</li>
-            <li>Formar integralmente a niños y jóvenes mediante talleres artísticos gratuitos.</li>
-            <li>Desarrollar nuevos proyectos artísticos de carácter cultural, ecológico y social.</li>
+            <li>Realizar creaciones colectivas inspiradas en la cosmovisión andina.</li>
+            <li>Brindar una actividad alternativa remunerada a los artistas.</li>
+            <li>Difundir el arte escénico andino a todo tipo de público.</li>
+            <li>Cultivar y preservar la cultura ancestral.</li>
+            <li>Formar niños y jóvenes mediante talleres artísticos.</li>
+            <li>Desarrollar nuevos proyectos culturales y sociales.</li>
         </ul>
 
     </section>
 
 </main>
-
 
 <?php include '../includes/footer.php'; ?>
