@@ -1,25 +1,23 @@
 /* ===============================
    HERO / IMAGEN SUPERIOR (SIN CORTAR)
    =============================== */
-section {
+.hero-historia {
     position: relative;
     overflow: hidden;
 
-    /* CENTRADO TOTAL */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-section > img.img-fluid {
-    width: 100%;              /* ocupa todo el ancho */
-    max-width: 1400px;        /* la agranda sin romper */
-    height: auto;             /* NO SE CORTA */
-    max-height: 85vh;         /* MÁS GRANDE */
-    object-fit: contain;      /* MUESTRA TODA LA IMAGEN */
+.hero-historia > img {
+    width: 100%;
+    max-width: 1800px;   /* MÁS GRANDE */
+    height: auto;
+    max-height: 92vh;    /* OCUPA MÁS PANTALLA */
+    object-fit: contain; /* NO SE CORTA */
     object-position: center;
     display: block;
-    margin: 0 auto;
 }
 
 /* ===============================
@@ -45,7 +43,6 @@ section > img.img-fluid {
     font-family: 'Alegreya', serif;
     color: #f2a900;
     font-weight: 700;
-    text-align: left;
 }
 
 /* HISTORIA */
@@ -132,8 +129,8 @@ section > img.img-fluid {
    RESPONSIVE
    =============================== */
 @media (max-width: 768px) {
-    section > img.img-fluid {
-        max-height: 65vh;   /* sigue grande en móvil */
+    .hero-historia > img {
+        max-height: 75vh;
     }
 
     .historia-texto {
