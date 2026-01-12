@@ -44,8 +44,8 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="imgtienda">
         <img src="../assets/img/imgcarrusel1.png" alt="">
     </div>
-    <div class="titulo">
-        <p>Recuerdos que mantienen viva la función</p>
+    <div class="seccion-titulos text-center">
+        <h1>Recuerdos que mantienen viva la función</h1>
     </div>
 
     <!-- Sección de Productos -->

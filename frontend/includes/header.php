@@ -48,7 +48,7 @@
 
                         <!-- Submenú Nosotros -->
                         <li class="has-submenu">
-                            <a href="../../pages/nosotros.php">Nosotros</a>
+                            <a href="../../pages/historia.php">Nosotros</a>
                             <ul class="submenu">
                                 <li><a href="../../pages/historia.php">Historia</a></li>
                                 <li><a href="../../pages/misionvision.php">Misión y Visión</a></li>
