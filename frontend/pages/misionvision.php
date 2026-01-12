@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="/assets/css/misionvision.css">
 
-<section>
+<section class="text-center">
     <img src="/assets/img/mision.jpg" class="img-fluid" width="1500" alt="Misión y Visión">
 </section>
 

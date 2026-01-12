@@ -3,14 +3,12 @@
 <link rel="stylesheet" href="/assets/css/legal.css">
 
 <!-- HERO LEGAL -->
-<section class="legal-hero">
+<section class="hero-historia text-center">
     <img src="/assets/img/legal.jpg"  width="1500" alt="Legal Teatro Andino Kusi Wasi">
-
-    <div class="legal-overlay">
+</section>
+    <div class="seccion-titulos text-center">
         <h1>LEGAL</h1>
     </div>
-</section>
-
 <!-- CONTENIDO LEGAL -->
 <main class="container my-5">
 

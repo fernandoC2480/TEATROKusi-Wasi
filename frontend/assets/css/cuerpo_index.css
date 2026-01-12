@@ -65,6 +65,12 @@
 
     transition: all 0.6s ease;
 }
+
+.info a {
+    text-decoration: none;
+    display: block;
+}
+
 h1, h2, h3 {
     font-family: 'Cinzel Decorative', serif;
 }
@@ -80,7 +86,7 @@ h1, h2, h3 {
 /* Texto corto visible */
 .texto-corto {
     font-size: 14px;
-    color: #dd910d;
+    color: #CEAE7E;
 }
 
 /* Texto largo oculto */
