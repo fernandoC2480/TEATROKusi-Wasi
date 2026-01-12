@@ -1,15 +1,13 @@
 <?php include '../includes/header.php'; ?>
 <link rel="stylesheet" href="../assets/css/proyecto.css">
-<link rel="stylesheet" href="../assets/css/caruselproy.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="../assets/css/carruselproy.css">
 
-
-<body>
     <!--inicio de imagen con titulo-->
     <div class="contenedor_proyectos">
         <div class="degradado1">
@@ -75,97 +73,127 @@
     </div>
     <h1 class="titulo2">MAS PROYECTOS</h1>
     <!-- Carrusel -->
-    <section class="carousel-3d">
-  <div class="swiper">
+<section class="seccion_envoltorio">
+  <section class="swiper">
 
     <div class="swiper-wrapper">
-
-      <!-- ===== CARD 1 ===== -->
+      <!-- cuerpo de las cartas -->
+       <!-- para duplicar una carta -->
       <div class="swiper-slide">
-        <article class="card">
+          <!-- estructura de la carta -->
+        <figure class="cards">
+          <div class="cardPopout">
 
-          <img 
-            src="../assets/img/img_proyectos/carrusel1.jpg"
-            alt="Obra teatral 1"
-            class="card__img"
-          >
+            <img src="../assets/img/img_proyectos/carrusel3.jpg" alt="Proyecto">
 
-          <div class="card__content">
-            <h2 class="card__title">Obras</h2>
-            <h4 class="card__subtitle">Teatro Andino</h4>
+            <h2>WILSON</h2>
+            <h4>El pata de House</h4>
 
-            <p class="card__text">
-              Promover, preservar y difundir la cultura ancestral andina a
-              través del arte escénico, formando integralmente a niños,
-              jóvenes y adultos.
-            </p>
+            <figcaption>
+              <p>
+                Oye Wilson, voy a extirpar un ojo a un quisiado... quieres verr... suena interesante
+              </p>
+            </figcaption>
 
-            <button class="btn-primary">Saber más</button>
+            <a href="#">
+              Continue Reading
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M4 8h8l-3-3 1-1 4 4-4 4-1-1 3-3H4z"/>
+              </svg>
+            </a>
+
           </div>
-
-        </article>
+        </figure>
       </div>
-
-      <!-- ===== CARD 2 ===== -->
+      <!-- para duplicar 1 carta -->
       <div class="swiper-slide">
-        <article class="card">
+        <figure class="cards">
+          <div class="cardPopout">
 
-          <img 
-            src="../assets/img/img_proyectos/carrusel2.jpg"
-            alt="Obra teatral 2"
-            class="card__img"
-          >
+            <img src="../assets/img/img_proyectos/carrusel1.jpg" alt="Proyecto">
 
-          <div class="card__content">
-            <h2 class="card__title">Formación</h2>
-            <h4 class="card__subtitle">Arte y Comunidad</h4>
+            <h2>Lillia</h2>
+            <h4>flor espiritual</h4>
 
-            <p class="card__text">
-              Formación artística integral en teatro, música y danza,
-              fortaleciendo la identidad cultural y el desarrollo humano.
-            </p>
+            <figcaption>
+              <p>
+                Lillia flor espiritual, se conce que tenia un gran jardin de sueños, mas un dia todo se volvio cenizas... ahora busca recuperar su jardin sin darse cuenta que ella es la unica flor viva de aquel jardin que aun no florece. 
+              </p>
+            </figcaption>
 
-            <button class="btn-primary">Saber más</button>
+            <a href="#">
+              Continue Reading
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M4 8h8l-3-3 1-1 4 4-4 4-1-1 3-3H4z"/>
+              </svg>
+            </a>
+
           </div>
-
-        </article>
+        </figure>
       </div>
-
-      <!-- ===== CARD 3 ===== -->
       <div class="swiper-slide">
-        <article class="card">
+          <!-- estructura de la carta -->
+        <figure class="cards">
+          <div class="cardPopout">
 
-          <img 
-            src="../assets/img/img_proyectos/carrusel3.jpg"
-            alt="Obra teatral 3"
-            class="card__img"
-          >
+            <img src="../assets/img/img_proyectos/carrusel6.jpg" alt="Proyecto">
 
-          <div class="card__content">
-            <h2 class="card__title">Experiencias</h2>
-            <h4 class="card__subtitle">Escena Viva</h4>
+            <h2>House</h2>
+            <h4>con flutershy?</h4>
 
-            <p class="card__text">
-              Experiencias escénicas únicas que conectan al público con
-              la memoria, la emoción y el arte andino contemporáneo.
-            </p>
+            <figcaption>
+              <p>
+                House es un doctor muy inteligente pero con mal genio, siempre anda con su flutershy que lo ayuda a calmarse.
+              </p>
+            </figcaption>
 
-            <button class="btn-primary">Saber más</button>
+            <a href="#">
+              Continue Reading
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M4 8h8l-3-3 1-1 4 4-4 4-1-1 3-3H4z"/>
+              </svg>
+            </a>
+
           </div>
-
-        </article>
+        </figure>
       </div>
+      <div class="swiper-slide">
+          <!-- estructura de la carta -->
+        <figure class="cards">
+          <div class="cardPopout">
 
+            <img src="../assets/img/img_proyectos/carrusel4.jpg" alt="Proyecto">
+
+            <h2>Cuddy</h2>
+            <h4>La jefa de House</h4>
+
+            <figcaption>
+              <p>
+                La Dra. Cuddy es la directora del hospital, y la que le puede dar chingadasos a House cuando se porta mal.
+              </p>
+            </figcaption>
+
+            <a href="#">
+              Continue Reading
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <path d="M4 8h8l-3-3 1-1 4 4-4 4-1-1 3-3H4z"/>
+              </svg>
+            </a>
+
+          </div>
+        </figure>
+      </div>
+  
+      <!--fin de cuerpo de cartas-->
     </div>
 
-    <!-- Scrollbar -->
     <div class="swiper-scrollbar"></div>
+  </section>
 
-  </div>
-    </section>
+</section>
 
 
-</body>
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-<script src="../assets/js/caruselproy.js"></script>
+  <!-- Fin Carrusel -->  
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="../assets/js/carruselproy.js"></script>
 <?php include '../includes/footer.php'; ?>
