@@ -32,12 +32,20 @@ $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+    <?php
+    // Cargar CSS específico para páginas (ej. tienda)
+    $script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
+    if (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php') {
+        echo "<link rel=\"stylesheet\" href=\"../../assets/css/estios_tienda.css\">\n";
+        echo "<link rel=\"stylesheet\" href=\"../../assets/css/estilos_flecha.css\">\n";
+    }
+    ?>
 <main>
     <div class="imgtienda">
         <img src="../assets/img/imgcarrusel1.png" alt="">
     </div>
-    <div class="titulo">
-        <p>Recuerdos que mantienen viva la función</p>
+    <div class="seccion-titulos text-center">
+        <h1>Recuerdos que mantienen viva la función</h1>
     </div>
 
     <!-- Sección de Productos -->
@@ -107,5 +115,3 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
 <script src="../assets/js/scroll-arrow.js"></script>
 <?php include '../includes/footer.php'; ?>
-</body>
-</html>
