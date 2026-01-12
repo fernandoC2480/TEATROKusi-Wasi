@@ -60,25 +60,28 @@
 
 .producto-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 12px rgba(255, 153, 0, 0.3);
 }
 
 /* Imagen del producto */
 .producto-imagen {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 1 / 1;
     background: #333;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FF9B00;
     font-weight: bold;
+    overflow: hidden;
 }
 
 .producto-imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
 }
 
 /* Información del producto */
@@ -120,7 +123,7 @@
 
 /* Stock del producto */
 .producto-stock {
-    color: #99cc00;
+    color: #ffffff;
     font-size: 0.85em;
 }
 
@@ -130,18 +133,20 @@
 
 /* Botón agregar al carrito */
 .btn-agregar {
-    background: #FF9B00;
-    color: #000;
-    border: none;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #834f02;
     padding: 8px 16px;
     border-radius: 4px;
-    cursor: pointer;
+    cursor: pointer;    
     font-weight: bold;
     transition: background 0.3s;
 }
 
 .btn-agregar:hover {
-    background: #ffffff;
+    background: #ff9900;
+    color: #000;
+    
 }
 
 .btn-agregar:disabled {
@@ -155,4 +160,82 @@
     color: #FF9B00;
     padding: 60px 20px;
     font-size: 1.2em;
+}
+
+/* ===== ESTILOS DE PAGINACIÓN ===== */
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 40px 20px;
+    margin-top: 30px;
+}
+
+.paginacion-flecha {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #000000;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.paginacion-flecha:hover {
+    background: #FF9B00;
+    transform: scale(1.1);
+}
+
+.paginacion-flecha.deshabilitada {
+    background: #666;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.paginacion-flecha.deshabilitada:hover {
+    background: #666;
+    transform: none;
+}
+
+.paginacion-numeros {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.paginacion-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    color: #FF9B00;
+    border: 2px solid #41403e;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.paginacion-numero:hover {
+    background: #FF9B00;
+    color: #000;
+    border-color: #FF9B00;
+}
+
+.paginacion-numero.activo {
+    background: #FF9B00;
+    color: #000;
+    border-color: #FF9B00;
+    cursor: default;
 }
