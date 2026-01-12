@@ -1,0 +1,157 @@
+/* ===============================
+   HERO / IMAGEN SUPERIOR (SIN CORTAR)
+   =============================== */
+.hero-historia {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-historia > img {
+    width: 100%;
+    max-width: 1800px;   /* MÁS GRANDE */
+    height: auto;
+    max-height: 92vh;    /* OCUPA MÁS PANTALLA */
+    object-fit: contain; /* NO SE CORTA */
+    object-position: center;
+    display: block;
+}
+
+/* ===============================
+   CONTENEDOR GENERAL
+   =============================== */
+.historia-texto {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    color: #eaeaea;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+/* ===============================
+   TÍTULOS Y SUBTÍTULOS
+   =============================== */
+.historia-texto h1,
+.historia-texto h2,
+.historia-texto h3 {
+    font-family: 'Alegreya', serif;
+    color: #f2a900;
+    font-weight: 700;
+}
+
+/* HISTORIA */
+.historia-texto h1 {
+    font-size: 3.4rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* OBJETIVOS */
+.historia-texto h2 {
+    font-size: 2.4rem;
+    margin: 4rem 0 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid #f2a900;
+}
+
+/* SUBTÍTULOS */
+.historia-texto h3 {
+    font-size: 1.8rem;
+    margin: 3rem 0 1.2rem;
+}
+
+/* ===============================
+   PÁRRAFOS CON APARICIÓN SUAVE
+   =============================== */
+.historia-texto p,
+.historia-texto ul {
+    margin-bottom: 1.6rem;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: aparecer 0.8s ease-out forwards;
+}
+
+/* Retraso progresivo */
+.historia-texto p:nth-of-type(1) { animation-delay: 0.1s; }
+.historia-texto p:nth-of-type(2) { animation-delay: 0.25s; }
+.historia-texto p:nth-of-type(3) { animation-delay: 0.4s; }
+.historia-texto p:nth-of-type(4) { animation-delay: 0.55s; }
+
+/* ===============================
+   BLOQUES DESTACADOS
+   =============================== */
+.historia-texto h3 + p,
+.historia-texto h3 + ul {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.5rem 2rem;
+    border-left: 4px solid #f2a900;
+    border-radius: 4px;
+}
+
+/* ===============================
+   LISTAS
+   =============================== */
+.historia-texto ul {
+    padding-left: 1.3rem;
+}
+
+.historia-texto ul li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+/* ===============================
+   TEXTO DESTACADO
+   =============================== */
+.historia-texto strong {
+    color: #f2a900;
+    font-weight: 600;
+}
+
+/* ===============================
+   ANIMACIÓN
+   =============================== */
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 768px) {
+    .hero-historia > img {
+        max-height: 75vh;
+    }
+
+    .historia-texto {
+        font-size: 0.98rem;
+        padding: 0 1rem;
+    }
+
+    .historia-texto h1 {
+        font-size: 2.3rem;
+    }
+
+    .historia-texto h2 {
+        font-size: 1.8rem;
+    }
+
+    .historia-texto h3 {
+        font-size: 1.5rem;
+    }
+
+    .historia-texto h3 + p,
+    .historia-texto h3 + ul {
+        padding: 1.2rem;
+    }
+}
