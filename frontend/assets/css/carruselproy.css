@@ -1,0 +1,223 @@
+/* =========================
+   RESET BÁSICO
+========================= */
+*:not(style, head),
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY (NO BLOQUEAR SCROLL)
+========================= */
+body {
+  margin: 0;
+  background: #000;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Figtree", sans-serif;
+  font-size: 110%;
+  line-height: 150%;
+}
+
+/* =========================
+   SECCIÓN FINAL: MAS PROYECTOS
+========================= */
+.seccion_envoltorio {
+  width: 100%;
+  padding: 4px 0 0px;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   CONTENEDOR SWIPER
+========================= */
+.seccion_envoltorio .swiper {
+  width: 100%;
+  max-width: 1400px;
+   padding: 15px 20px 10px;
+  overflow: visible;
+}
+
+/* =========================
+   ENVOLTORIO DE CARDS
+========================= */
+.enbolotorio_swiper {
+  display: flex;
+  gap: 30px;
+}
+
+/* =========================
+   CARD (SLIDE)
+========================= */
+.cards {
+  width: 320px;
+  flex-shrink: 0;
+  position: relative;
+  background: rgba(3, 3, 3, 0.85);
+  border-radius: 7px;
+  padding: 10px;
+  cursor: grab;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+/* =========================
+   BORDES DECORATIVOS
+========================= */
+.cards::before,
+.cards::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  transition: all 0.3s ease;
+}
+
+.cards::before {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px dashed white;
+  border-right: 1px solid white;
+  border-radius: 0 0 7px 0;
+}
+
+.cards::after {
+  top: 0;
+  left: 0;
+  border-top: 1px solid white;
+  border-left: 1px dashed white;
+  border-radius: 7px 0 0 0;
+}
+
+/* =========================
+   HOVER DORADO → NEGRO
+========================= */
+.cards:hover {
+  background: linear-gradient(
+    135deg,
+    #dd910d,  /* dorado brillante */
+    #d19705,  /* oro intenso */
+    #d37509,  /* naranja fuego */
+    #aa6506,  /* rojo fuego */
+    #8b0000,  /* rojo oscuro */
+    #2a0000,  /* casi negro */
+    #000000   /* negro total */
+  );
+}
+
+.cards:hover::before,
+.cards:hover::after {
+  width: 160px;
+  height: 160px;
+}
+
+/* =========================
+   CONTENIDO INTERNO
+========================= */
+.cardPopout {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 7px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   IMAGEN
+========================= */
+.cards img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+.cards h2 {
+  color: white;
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+}
+
+.cards h4 {
+  color: #bbb;
+  font-style: italic;
+  margin: 0 0 15px;
+}
+
+/* =========================
+   TEXTO
+========================= */
+.cards figcaption {
+  border-left: 2px solid white;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.cards figcaption p {
+  color: #999;
+  margin: 0;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+.cards a {
+  margin-top: auto;
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.4s ease;
+}
+
+.cards a:hover {
+  background: #ff9800;
+  color: black;
+}
+
+/* =========================
+   ICONO DEL BOTÓN
+========================= */
+.cards a svg {
+  width: 20px;
+  fill: currentColor;
+}
+
+/* =========================
+   BARRA DE DESPLAZAMIENTO
+========================= */
+.barra_desplasamiento {
+  width: 100%;
+  height: 6px;
+  margin-top: 30px;
+  background: linear-gradient(90deg, #444, #aaa, #444);
+  border-radius: 3px;
+}
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .cards {
+    width: 260px;
+  }
+}
