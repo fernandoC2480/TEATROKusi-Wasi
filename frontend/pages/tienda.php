@@ -7,9 +7,28 @@ include '../../backend/src/config/database.php';
 $database = new Database();
 $conn = $database->getConnection();
 
-// Obtener productos de la base de datos
-$query = "SELECT id, nombre, descripcion, precio, imagen, stock FROM productos WHERE estado = TRUE ORDER BY id DESC";
+// Configuración de paginación
+$productos_por_pagina = 21;
+$pagina_actual = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+
+// Obtener total de productos
+$query_total = "SELECT COUNT(*) as total FROM productos WHERE estado = TRUE";
+$stmt_total = $conn->prepare($query_total);
+$stmt_total->execute();
+$total_productos = $stmt_total->fetch(PDO::FETCH_ASSOC)['total'];
+$total_paginas = ceil($total_productos / $productos_por_pagina);
+
+// Asegurar que la página no sea mayor que el total
+$pagina_actual = min($pagina_actual, max(1, $total_paginas));
+
+// Calcular offset
+$offset = ($pagina_actual - 1) * $productos_por_pagina;
+
+// Obtener productos de la base de datos con paginación
+$query = "SELECT id, nombre, descripcion, precio, imagen, stock FROM productos WHERE estado = TRUE ORDER BY id DESC LIMIT :limit OFFSET :offset";
 $stmt = $conn->prepare($query);
+$stmt->bindValue(':limit', $productos_por_pagina, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -53,6 +72,36 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         <?php endif; ?>
     </div>
+
+    <!-- Sección de Paginación -->
+    <?php if ($total_paginas > 1): ?>
+    <div class="paginacion">
+        <!-- Flecha anterior -->
+        <?php if ($pagina_actual > 1): ?>
+            <a href="?page=<?php echo $pagina_actual - 1; ?>" class="paginacion-flecha" title="Página anterior">←</a>
+        <?php else: ?>
+            <span class="paginacion-flecha deshabilitada">←</span>
+        <?php endif; ?>
+
+        <!-- Números de página -->
+        <div class="paginacion-numeros">
+            <?php for ($i = 1; $i <= $total_paginas; $i++): ?>
+                <?php if ($i == $pagina_actual): ?>
+                    <span class="paginacion-numero activo"><?php echo $i; ?></span>
+                <?php else: ?>
+                    <a href="?page=<?php echo $i; ?>" class="paginacion-numero"><?php echo $i; ?></a>
+                <?php endif; ?>
+            <?php endfor; ?>
+        </div>
+
+        <!-- Flecha siguiente -->
+        <?php if ($pagina_actual < $total_paginas): ?>
+            <a href="?page=<?php echo $pagina_actual + 1; ?>" class="paginacion-flecha" title="Página siguiente">→</a>
+        <?php else: ?>
+            <span class="paginacion-flecha deshabilitada">→</span>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
 </main>
 
 <button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
