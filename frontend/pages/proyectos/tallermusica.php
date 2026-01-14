@@ -4,6 +4,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/css/tallermusica.css">
+<body>
   <div class="titulo y imagen">
         <div class="1parte">
              <h1 class="titulo1">Taller de musica</h1>
@@ -59,9 +60,9 @@
     <img src="../../assets/img/img_tallermusica/card4.jpg" alt="Danza andina">
   </article>
 
-</section>
+  </section>
 
    
-     
+</body>     
        
 <?php include '../../includes/footer.php'; ?>
