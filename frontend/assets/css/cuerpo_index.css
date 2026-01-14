@@ -195,7 +195,11 @@ h1, h2, h3 {
         display: none;
     }
 }
-
+@media (max-width: 768px) {
+    .flor{
+        display: none;
+    }
+}
 /*parte contenido nosotros*/
 /* Contenedor para centrar la card */
 /* Centrado */
@@ -436,7 +440,6 @@ h1, h2, h3 {
     .proy2 img {
         margin-top: 0;
     }
-
     .inf1,
     .inf2 {
         text-align: center;
@@ -683,4 +686,62 @@ button:active {
   transform: translateY(0);
   box-shadow:
     0 6px 15px rgba(157, 6, 6, 0.5);
+}
+/* ================= SOLUCIÓN OVERFLOW ================= */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+}
+
+/* ================= ANIMACIONES SEGURAS ================= */
+
+.left-img {
+  transform: translateX(-30%);
+}
+
+.right-img {
+  transform: translateX(30%);
+}
+
+.reveal-card.left .img-anim {
+  transform: translateX(-30%);
+}
+
+.reveal-card.right .img-anim {
+  transform: translateX(30%);
+}
+
+.reveal-card.active .img-anim,
+.reveal-card.active .img-wrap {
+  transform: translateX(0);
+}
+
+/* ================= PROYECTO 2 FIX ================= */
+
+.proy2 img {
+  margin-top: 0;
+  transform: translateY(-80px);
+}
+
+@media (max-width: 768px) {
+  .proy2 img {
+    transform: none;
+  }
+}
+
+/* ================= MOBILE EXTRA ================= */
+
+@media (max-width: 480px) {
+  .proy1 img,
+  .proy2 img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 }
