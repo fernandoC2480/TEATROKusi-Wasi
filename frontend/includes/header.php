@@ -1,4 +1,8 @@
-<?php 
+<?php
+// 1. Iniciamos sesión para poder leer los datos del login
+if (session_status() === PHP_SESSION_NONE) { 
+    session_start(); 
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -58,15 +62,31 @@
                         </li>
 
                         <li><a href="../../pages/legal.php">Legal</a></li>
-
                         <!-- Autenticación -->
                         <li>
+                            <?php if (isset($_SESSION['user_name'])): ?>
+                                <!-- Si el usuario ha iniciado sesión, mostramos su nombre -->
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 20px; border: 2px solid #fff;">
+                                        <i class="bi bi-person-check-fill"></i> 
+                                        Hola, <?php echo htmlspecialchars($_SESSION['user_name']); ?>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <!-- Ruta hacia tu archivo de logout -->
+                                        <li><a class="dropdown-item" href="../../backend/src/auth/logout.php">Cerrar Sesión</a></li>
+                                    </ul>
+                                </div>
+                            <?php else: ?>
+                                <!-- Si NO ha iniciado sesión, mostramos el icono original -->
                                 <a href="../../pages/loging.php" class="login-circle">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                                     </svg>
                                 </a>
+                            <?php endif; ?>
                         </li>
                     </ul>
                 </nav>
