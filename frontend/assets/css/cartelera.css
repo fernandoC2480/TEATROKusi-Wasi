@@ -1,0 +1,204 @@
+
+/* --- 6. TÍTULOS Y SECCIONES --- */
+
+.t1 h1 {
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    text-transform: uppercase;
+    color: #FF9B00;
+    margin: 30px 0;
+}
+
+.st1 h1 {
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    color: #FF9B00;
+    margin: 30px 0;
+}
+
+.f1 {
+    font-family: 'Lobster';
+    color: #CEAE7E;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-style: italic;
+}
+
+/*----------------------------------------------- css de cartelera Centrado */
+
+/* Contenedor general */
+.actuaciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Card */
+.actuacion {
+    position: relative;
+    height: clamp(480px, 80vh, 670px);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 1 10px 25px rgba(212, 40, 2, 0.15);
+    cursor: pointer;
+}
+
+/* Imagen */
+.actuacion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+/* Recuadro de texto */
+.info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: rgba(27, 27, 27, 0.99);
+    padding: 20px;
+    text-align: center;
+
+    transition: all 0.6s ease;
+}
+
+.info a {
+    text-decoration: none;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel Decorative', serif;
+}
+
+/* Título */
+.info h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #dd910d;
+}
+
+/* Texto corto visible */
+.texto-corto {
+    font-size: 14px;
+    color: #CEAE7E;
+}
+
+/* Texto largo oculto */
+.texto-largo {
+    display: none;
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 1.5;
+    color:#dd910d
+}
+
+/* Botón oculto */
+.info button {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #c30404;
+    color: #fff;
+    cursor: pointer;
+}
+
+.actuacion:hover img {
+    transform: scale(1.1);
+}
+
+.actuacion:hover .info {
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    color: #db9b07;
+}
+
+.actuacion:hover .texto-corto {
+    display: none;
+}
+
+.actuacion:hover .texto-largo,
+.actuacion:hover button {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .actuaciones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .actuaciones {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- PRUEBAS DE EFECTOS VISUALES --- */
+/* TÍTULOS – entrada ceremonial */
+/* ===============================
+   ANIMACIÓN DE TÍTULOS – ENTRADA
+=============================== */
+
+/* Estado inicial (oculto) */
+.reveal-title {
+  opacity: 0;
+  transform: translateY(-50px);
+  filter: blur(6px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.reveal-title.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.reveal-subtitle {
+  opacity: 0;
+  transform: translateY(-30px);
+  filter: blur(4px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease,
+    filter 0.9s ease;
+}
+
+.reveal-subtitle.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+
+/* Cards ocultas inicialmente */
+.actuacion {
+  opacity: 0;
+  transform: translateY(-60px);
+  filter: blur(8px);
+  transition: 
+    opacity 0.9s ease,
+    transform 0.9s ease,
+    filter 0.9s ease;
+}
+
+/* Cuando entran en escena */
+.actuacion.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+/**/
