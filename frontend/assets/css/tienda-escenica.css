@@ -1,0 +1,384 @@
+/* ===============================
+   RESET
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #1a0f05, #000);
+}
+
+/* ===============================
+   CONTENEDOR
+=============================== */
+.productos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===============================
+   CARD ESCÉNICA
+=============================== */
+.tienda-card {
+  position: relative;
+  height: 460px;
+  background: #0e0e0e;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,.7);
+  transition: .6s ease;
+}
+
+.tienda-card:hover {
+  transform: translateY(-12px);
+}
+
+/* Halo ceremonial */
+.tienda-halo {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255,155,0,.5), transparent 60%);
+  transition: .6s ease;
+}
+
+.tienda-card:hover .tienda-halo {
+  background:
+    radial-gradient(circle at 80% -10%, rgba(255,60,0,.7), transparent 70%);
+}
+
+/* ===============================
+   IMAGEN
+=============================== */
+.tienda-img {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  transform: translateY(-50%);
+  transition: .6s ease;
+  z-index: 2;
+}
+
+.tienda-card:hover .tienda-img {
+  top: 10%;
+  transform: translateY(0);
+}
+
+.tienda-img img {
+  width: 240px;
+  display: block;
+  margin: auto;
+  transform: rotate(-10deg);
+  transition: .6s ease;
+}
+
+.tienda-card:hover .tienda-img img {
+  width: 270px;
+}
+
+/* ===============================
+   CONTENIDO
+=============================== */
+.tienda-content {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  padding: 22px;
+  text-align: center;
+  transition: 1s ease;
+  z-index: 3;
+  
+}
+
+.tienda-card:hover .tienda-content {
+  height: 260px;
+}
+
+.tienda-title {
+  font-weight: 800;
+  font-family: 'Cinzel Decorative', serif;
+  color: #ff9b00;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.tienda-desc {
+  font-size: .9rem;
+  color: #ceae7e;
+  opacity: 0;
+  transition: .4s ease;
+}
+
+.tienda-card:hover .tienda-desc {
+  opacity: 1;
+  transition-delay: .3s;
+}
+
+/* ===============================
+   STOCK / PRECIO
+=============================== */
+.tienda-stock {
+  margin-top: 8px;
+  font-size: .8rem;
+}
+
+.tienda-stock.ok { color: #8fd18f; }
+.tienda-stock.out { color: #d46a6a; }
+
+.tienda-precio {
+  margin-top: 6px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff9b00;
+}
+
+/* ===============================
+   BOTÓN
+=============================== */
+.tienda-btn {
+  margin-top: 12px;
+  padding: 10px 26px;
+  border-radius: 30px;
+  border: 1px solid #ff9b00;
+  background: transparent;
+  color: #ff9b00;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .4s ease;
+}
+
+.tienda-card:hover .tienda-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tienda-btn:hover {
+  background: #ff9b00;
+  color: #000;
+}
+
+.tienda-btn:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 600px) {
+  .tienda-card {
+    height: 420px;
+  }
+
+  .tienda-img img {
+    width: 200px;
+  }
+}
+/* ===============================
+   FILA PRECIO + BOTÓN
+=============================== */
+
+.tienda-accion {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  /* oculto hasta hover */
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+/* Aparece al hover */
+.tienda-card:hover .tienda-accion {
+  opacity: 1;
+}
+
+/* Precio */
+.tienda-precio {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff9b00;
+  white-space: nowrap;
+}
+
+/* Botón compacto */
+.tienda-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #ff9b00;
+  background: transparent;
+  color: #ff9b00;
+  cursor: pointer;
+  transition: background .3s ease, color .3s ease;
+}
+
+.tienda-btn:hover {
+  background: #ff9b00;
+  color: #000;
+}
+
+.tienda-btn:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+/* ===============================
+   STOCK: SOLO EN HOVER
+=============================== */
+
+/* Estado normal: oculto pero con espacio reservado */
+.tienda-stock {
+  opacity: 0;
+  height: 18px;              /* espacio fijo */
+  transition: opacity .3s ease;
+}
+
+/* Aparece solo al hover */
+.tienda-card:hover .tienda-stock {
+  opacity: 1;
+}
+
+/* Colores */
+.tienda-stock.ok {
+  color: #8fd18f;
+}
+
+.tienda-stock.out {
+  color: #d46a6a;
+}
+
+
+.tienda-card:hover .tienda-img img {
+  filter: brightness(0.55) contrast(1.05);
+  transition: filter .4s ease;
+}
+/* ===============================
+   RESPONSIVE GLOBAL
+=============================== */
+
+/* ===== TABLETS ===== */
+@media (max-width: 1024px) {
+  .productos-container {
+    gap: 30px;
+    padding: 40px 16px;
+  }
+
+  .tienda-card {
+    height: 440px;
+  }
+
+  .tienda-img img {
+    width: 220px;
+  }
+}
+
+/* ===== TABLET / MÓVIL GRANDE ===== */
+@media (max-width: 820px) {
+  .productos-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .tienda-card {
+    height: 420px;
+  }
+
+  .tienda-img {
+    top: 12%;
+    transform: none;
+  }
+
+  .tienda-img img {
+    width: 200px;
+    transform: rotate(-6deg);
+  }
+
+  .tienda-content {
+    height: 220px;
+  }
+
+  .tienda-desc {
+    opacity: 1;
+  }
+
+  .tienda-stock,
+  .tienda-accion {
+    opacity: 1;
+  }
+}
+
+/* ===== MÓVIL ===== */
+@media (max-width: 600px) {
+  body {
+    background: #000;
+  }
+
+  .productos-container {
+    grid-template-columns: 1fr;
+    padding: 30px 14px;
+  }
+
+  .tienda-card {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .tienda-img {
+    position: relative;
+    top: 0;
+    transform: none;
+    padding-top: 20px;
+  }
+
+  .tienda-img img {
+    width: 180px;
+    transform: rotate(0);
+    filter: none;
+  }
+
+  .tienda-content {
+    position: relative;
+    height: auto;
+    padding: 20px;
+  }
+
+  .tienda-desc {
+    opacity: 1;
+  }
+
+  .tienda-stock {
+    opacity: 1;
+    height: auto;
+    margin-top: 6px;
+  }
+
+  .tienda-accion {
+    opacity: 1;
+    margin-top: 12px;
+  }
+
+  .tienda-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Desactivar efectos hover innecesarios */
+  .tienda-card:hover {
+    transform: none;
+  }
+
+  .tienda-card:hover .tienda-img img {
+    filter: none;
+  }
+}

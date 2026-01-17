@@ -36,8 +36,9 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // Cargar CSS específico para páginas (ej. tienda)
     $script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
     if (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php') {
-        echo "<link rel=\"stylesheet\" href=\"../../assets/css/estios_tienda.css\">\n";
+        echo "<link rel=\"stylesheet\" href=\"../../assets/css/tienda-escenica.css\">\n";
         echo "<link rel=\"stylesheet\" href=\"../../assets/css/estilos_flecha.css\">\n";
+        
     }
     ?>
 <main>
@@ -52,28 +53,55 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="productos-container">
         <?php if ($productos): ?>
             <?php foreach ($productos as $producto): ?>
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <?php $imgPath = getProductImagePath($producto['imagen'], $producto['id'], $producto['nombre']); ?>
-                        <img src="<?php echo htmlspecialchars($imgPath, ENT_QUOTES); ?>" alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
-                    </div>
-                    <div class="producto-info">
-                        <div class="producto-nombre"><?php echo htmlspecialchars($producto['nombre']); ?></div>
-                        <div class="producto-descripcion"><?php echo htmlspecialchars($producto['descripcion']); ?></div>
-                        <div class="producto-footer">
-                            <div>
-                                <div class="producto-precio">S/. <?php echo number_format($producto['precio'], 2); ?></div>
-                                <div class="producto-stock <?php echo $producto['stock'] <= 0 ? 'sin-stock' : ''; ?>">
-                                    <?php echo $producto['stock'] > 0 ? 'Stock: ' . $producto['stock'] : 'Agotado'; ?>
-                                </div>
+                    <div class="tienda-card">
+
+                        <!-- Halo -->
+                        <div class="tienda-halo"></div>
+
+                        <!-- Imagen (tu lógica se mantiene) -->
+                        <div class="tienda-img">
+                        <?php
+                            $imgPath = getProductImagePath(
+                            $producto['imagen'],
+                            $producto['id'],
+                            $producto['nombre']
+                            );
+                        ?>
+                        <img
+                            src="<?= htmlspecialchars($imgPath, ENT_QUOTES); ?>"
+                            alt="<?= htmlspecialchars($producto['nombre']); ?>">
+                        </div>
+
+                        <!-- Contenido -->
+                        <div class="tienda-content">
+
+                        <h3 class="tienda-title">
+                            <?= htmlspecialchars($producto['nombre']); ?>
+                        </h3>
+
+                        <p class="tienda-desc">
+                            <?= htmlspecialchars($producto['descripcion']); ?>
+                        </p>
+
+                        <div class="tienda-stock <?= $producto['stock'] > 0 ? 'ok' : 'out'; ?>">
+                            <?= $producto['stock'] > 0 ? 'Stock: '.$producto['stock'] : 'Agotado'; ?>
+                        </div>
+
+                        <div class="tienda-accion">
+                            <div class="tienda-precio">
+                                S/. <?= number_format($producto['precio'], 2); ?>
                             </div>
-                            <button class="btn-agregar" <?php echo $producto['stock'] <= 0 ? 'disabled' : ''; ?>>
+
+                            <button
+                                class="tienda-btn"
+                                <?= $producto['stock'] <= 0 ? 'disabled' : ''; ?>>
                                 Agregar
                             </button>
+                            </div>
                         </div>
                     </div>
-                </div>
             <?php endforeach; ?>
+
         <?php else: ?>
             <div class="sin-productos">
                 <p>No hay productos disponibles en este momento.</p>
