@@ -3,6 +3,10 @@
 if (session_status() === PHP_SESSION_NONE) { 
     session_start(); 
 }
+
+// Variable para saber si estamos en la tienda
+$script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
+$es_tienda = (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,16 +19,13 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../../assets/css/estilos_index.css">
     <?php
-    // Cargar CSS específico para páginas (ej. tienda)
-    $script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
-    if (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php') {
+    if ($es_tienda) {
         echo "<link rel=\"stylesheet\" href=\"../../assets/css/estios_tienda.css\">\n";
         echo "<link rel=\"stylesheet\" href=\"../../assets/css/estilos_flecha.css\">\n";
     }
     ?>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -43,7 +44,6 @@ if (session_status() === PHP_SESSION_NONE) {
                         <li><a href="../../pages/cartelera.php">Shows</a></li>
                         <li><a href="../../pages/tienda.php">Tienda</a></li>
                         
-                        <!-- Submenú Proyectos -->
                         <li class="has-submenu">
                             <a href="../../pages/proyectos.php">Proyectos</a>
                             <ul class="submenu">
@@ -52,7 +52,6 @@ if (session_status() === PHP_SESSION_NONE) {
                             </ul>
                         </li>
 
-                        <!-- Submenú Nosotros -->
                         <li class="has-submenu">
                             <a href="../../pages/historia.php">Nosotros</a>
                             <ul class="submenu">
@@ -62,10 +61,21 @@ if (session_status() === PHP_SESSION_NONE) {
                         </li>
 
                         <li><a href="../../pages/legal.php">Legal</a></li>
+
+                        <!-- ÍCONO DEL CARRITO (Solo aparece en tienda) -->
+                        <?php if ($es_tienda): ?>
+                        <li>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <?php endif; ?>
+
                         <!-- Autenticación -->
                         <li>
                             <?php if (isset($_SESSION['user_name'])): ?>
-                                <!-- Si el usuario ha iniciado sesión, mostramos su nombre -->
                                 <div class="dropdown">
                                     <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 20px; border: 2px solid #fff;">
                                         <i class="bi bi-person-check-fill"></i> 
@@ -74,12 +84,10 @@ if (session_status() === PHP_SESSION_NONE) {
                                     <ul class="dropdown-menu dropdown-menu-dark">
                                         <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
                                         <li><hr class="dropdown-divider"></li>
-                                        <!-- Ruta hacia tu archivo de logout -->
                                         <li><a class="dropdown-item" href="../../backend/src/auth/logout.php">Cerrar Sesión</a></li>
                                     </ul>
                                 </div>
                             <?php else: ?>
-                                <!-- Si NO ha iniciado sesión, mostramos el icono original -->
                                 <a href="../../pages/loging.php" class="login-circle">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
