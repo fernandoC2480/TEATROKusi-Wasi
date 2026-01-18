@@ -1,4 +1,35 @@
-<?php include '../../includes/header.php'; ?>
+<?php 
+// 1. Conexión a la base de datos
+require_once "../../backend/src/config/database.php";
+$database = new Database();
+$db = $database->getConnection();
+
+// 2. Validar que se reciba un ID por la URL
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    
+    // Consulta para obtener los datos del show
+    $query = "SELECT * FROM shows WHERE id = :id AND estado = 1 LIMIT 1";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $show = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Si el show no existe o está oculto, redirigir al catálogo
+    if (!$show) {
+        header("Location: ../../index.php"); // Cambia esto a tu página principal
+        exit();
+    }
+} else {
+    header("Location: ../../index.php");
+    exit();
+}
+
+// 3. Preparar variables (Ruta de imágenes)
+$path_img = "../../assets/img/img_shows/";
+
+include '../../includes/header.php'; 
+?>
 <link rel="stylesheet" href="../../assets/css/estilos_flecha.css">
 
 <!-- SECCIÓN DEL VIDEO -->
@@ -6,7 +37,8 @@
     <div class="container text-center py-4">
         <div class="video-wrapper shadow-lg">
             <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/8VB0_5ehQSg?si=PIwLXfJROHH3t5d4" 
+                <!-- Lógica para el ID de YouTube -->
+                <iframe src="https://www.youtube.com/embed/<?php echo $show['video_url']; ?>" 
                         title="YouTube video player" 
                         allowfullscreen></iframe>
             </div>
@@ -16,17 +48,16 @@
 
 <main class="container my-5">
     <div class="seccion-subtitulos">
-        <h1>Dioses Andinos</h1>
+        <h1><?php echo htmlspecialchars($show['nombre_show']); ?></h1>
     </div>
     <div class="sinopsis-container">
         <h2 class="sinopsis-title">Sinopsis</h2>
         <p class="sinopsis-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dictum, neque vitae ultrices suscipit, ex eros iaculis odio, vitae porttitor lectus turpis at orci. Aenean feugiat nunc vel lorem hendrerit, id vehicula justo aliquam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus malesuada purus in tortor tempor tincidunt.
-            <br><br>
-            Donec varius orci lacus, id placerat massa condimentum quis. In hac habitasse platea dictumst. Aliquam commodo libero id dui lobortis vestibulum. Nulla viverra blandit dictum. Integer id justo sed quam pharetra luctus vel non sapien.
+            <?php echo nl2br(htmlspecialchars($show['sinopsis'])); ?>
         </p>
         <div class="d-flex justify-content-end">
-            <a href="#" class="btn-reservar">Solicitar reserva</a>
+            <!-- Link a reserva pasando el ID del show -->
+            <a href="../reserva.php?show_id=<?php echo $show['id']; ?>" class="btn-reservar">Solicitar reserva</a>
         </div>
     </div>
     <div class="container my-5 text-white">
@@ -40,12 +71,13 @@
             <div class="col-md-4 info-show-item border-side">
                 <i class="bi bi-clock"></i>
                 <h4>Duración</h4>
-                <p>25 min</p>
+                <p><?php echo htmlspecialchars($show['duracion']); ?></p>
             </div>
             <!-- Columna 2: Ficha Técnica-->
             <div class="col-md-4 info-show-item border-side">
                 <i class="bi bi-card-checklist"></i>
                 <h4>Ficha Técnica</h4>
+                <p><?php echo htmlspecialchars($show['especificaciones']); ?></p>
             </div>
             <!-- Columna 3: Teléfono -->
             <div class="col-md-4 info-show-item">
@@ -59,38 +91,47 @@
 
         <div class="row row-cols-1 row-cols-md-3 g-3">
             <!-- Imagen 1 -->
+            <?php if(!empty($show['foto1'])): ?>
             <div class="col">
                 <div class="gallery-item">
-                    <img src="../../assets/img/imagencartelera1.png" class="img-fluid gallery-img" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                    <img src="<?php echo $path_img . $show['foto1']; ?>" class="img-fluid gallery-img" alt="Foto 1" data-bs-toggle="modal" data-bs-target="#galleryModal">
                 </div>
             </div>
+            <?php endif; ?>
+
             <!-- Imagen 2 -->
+            <?php if(!empty($show['foto2'])): ?>
             <div class="col">
                 <div class="gallery-item">
-                    <img src="../assets/img/galeria2.png" class="img-fluid gallery-img" alt="Imagen 2" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                    <img src="<?php echo $path_img . $show['foto2']; ?>" class="img-fluid gallery-img" alt="Foto 2" data-bs-toggle="modal" data-bs-target="#galleryModal">
                 </div>
             </div>
+            <?php endif; ?>
+
             <!-- Imagen 3 -->
+            <?php if(!empty($show['foto3'])): ?>
             <div class="col">
                 <div class="gallery-item">
-                    <img src="../assets/img/galeria3.png" class="img-fluid gallery-img" alt="Imagen 3" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                    <img src="<?php echo $path_img . $show['foto3']; ?>" class="img-fluid gallery-img" alt="Foto 3" data-bs-toggle="modal" data-bs-target="#galleryModal">
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 
-    <!-- ESTRUCTURA DEL MODAL (Pon esto al final de tu archivo, antes del footer) -->
+    <!-- ESTRUCTURA DEL MODAL -->
     <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content bg-transparent border-0">
-        <div class="modal-body p-0 text-center">
-            <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-            <img src="" id="modalImage" class="img-fluid rounded shadow-lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0 text-center">
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <img src="" id="modalImage" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
     </div>
 </main>
+
 <script>
     document.addEventListener('click', function (e) {
         if (e.target.classList.contains('gallery-img')) {
@@ -100,5 +141,5 @@
     });
 </script>
 <button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
-<script src="../assets/js/scroll-arrow.js"></script>
+<script src="../../assets/js/scroll-arrow.js"></script>
 <?php include '../../includes/footer.php'; ?>
