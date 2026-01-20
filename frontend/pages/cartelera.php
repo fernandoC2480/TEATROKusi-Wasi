@@ -7,9 +7,10 @@
         <div class="t1">
             <h1 class="reveal-title">Nuestros shows</h1>
         </div>
-        <div>
+        <!-- Ancestrales -->
+        <div id="ancestrales">
             <div class="st1">
-                <h1 class="reveal-title">Andinos</h1>
+                <h1 class="reveal-title">Ancestrales</h1>
             </div>
             <div class="f1 reveal-subtitle">“Vive la magia de los Andes en cada show”</div>
             <div class="actuaciones"> <!-- Contenedor principal que usa tu Grid de 3 columnas --> 
@@ -63,7 +64,9 @@
                 </div>
             </div>
         </div>
-        <div>
+
+        <!-- Eclesiásticos -->
+        <div id="eclesiasticos">
             <div class="st1">
                 <h1 class="reveal-title">Ecleciasticos</h1>
             </div>
@@ -119,7 +122,9 @@
                 </div>
             </div>
         </div>
-        <div>
+
+        <!-- Ecológicos -->
+            <div id="ecologicos">
             <div class="st1">
                 <h1 class="reveal-title">Ecológicos</h1>
             </div>

@@ -4,7 +4,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../assets/css/tallermusica.css">
-<body>
+<div>
+   <div class="t1">
+            <h1 class="reveal-title">MMMMMMMMM</h1>
+        </div>
+         <div class="t1">
+            <h1 class="reveal-title">MMMMMMMMM</h1>
+        </div>
+  
     <div class="titulo y imagen">
           <div class="1parte">
               <h1 class="titulo1">Taller de musica</h1>
@@ -61,8 +68,8 @@
     </article>
 
   </section>
-</body>
-   
+
+</div>
      
        
 <?php include '../../includes/footer.php'; ?>

@@ -170,8 +170,8 @@ body {
 ========================= */
 .cards a {
   margin-top: auto;
-  background: black;
-  color: white;
+  background: rgb(35, 35, 35);
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
   border-radius: 3px;
   text-decoration: none;

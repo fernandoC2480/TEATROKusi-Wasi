@@ -11,7 +11,7 @@
       <!--inicio de imagen con titulo-->
       <div class="contenedor_proyectos">
           <div class="degradado1">
-          <img src="../assets/img/img_proyectos/proyectos.jpg" alt="p1" class="p1">
+          <img src="../assets/img/img_proyectos/proyectos.png" alt="p1" class="p1">
           </div>
           <h1 class="titulo1">PROXIMAS <br> EXPERERIENCIAS UNICAS<br> QUE NO TE PUEDES <br>PERDER</h1>
       </div>
@@ -27,10 +27,10 @@
       <div class="contenedor-cards">
 
       <!-- Card 1: Imagen izquierda, texto derecha -->
-      <div class="card1">
-          <h2 class="cardt1">Obras</h2>
+      <div  id="neuvo" class="card1">
+          <h2 class="cardt1">Nuevas Historias que Contar</h2>
           <div class="cardcont1">
-              <img src="../assets/img/img_proyectos/card2.jpg" alt="imgcard1" class="cardimg1">
+              <img src="../assets/img/img_proyectos/card1f.jpg" alt="imgcard1" class="cardimg1">
               <div class="cardtxt1">
                   <p>
                       Promover, preservar y difundir la cultura ancestral andina a través del arte escénico, formando integralmente a niños, jóvenes y adultos en teatro, música y danza, y generando oportunidades laborales dignas para los artistas, contribuyendo al desarrollo cultural, social y humano de la comunidad.
@@ -51,14 +51,16 @@
 
       <!-- Card 2: Imagen derecha, texto izquierda -->
       <div class="card2">
-          <h2 class="cardt2">Obras Internacionales</h2>
+          <h2 class="cardt2">Obras presentadas</h2>
           <div class="cardcont2">
-              <img src="../assets/img/img_proyectos/card1.jpg" alt="imgcard2" class="cardimg2">
+              <img src="../assets/img/img_proyectos/card2f.jpeg" alt="imgcard2" class="cardimg2">
               <div class="cardtxt2">
                   <p>
                       Ser una organización artística referente a nivel nacional e internacional en la creación y difusión del teatro andino, reconocida por su calidad artística, su compromiso con la identidad cultural y su aporte a la formación de artistas y públicos conscientes de su herencia cultural y valores socio-comunitarios.
                   </p>
-                  <button class="cardboton2">Saber más</button>
+                  <a href="../pages/cartelera.php">
+                    <button id="mas"  class="cardboton2">Saber más</button>
+                  </a> 
               </div>
           </div>
       </div>
@@ -68,7 +70,7 @@
           <div class="icono3">
           <img src="../assets/img/img_proyectos/adorno3.png" alt="icono" />
           </div>
-        <div class="linea"></div>
+        <div id="ms" class="linea"></div>
       </div>
       </div>
       <h1 class="titulo2">MAS PROYECTOS</h1>
@@ -83,23 +85,19 @@
             <!-- estructura de la carta -->
           <figure class="cards">
             <div class="cardPopout">
+              <img src="../assets/img/img_proyectos/crrusel3.png" alt="Proyecto">
 
-              <img src="../assets/img/img_proyectos/carrusel3.jpg" alt="Proyecto">
-
-              <h2>WILSON</h2>
-              <h4>El pata de House</h4>
+              <h2>Musica</h2>
+              <h4>Taller de musica</h4>
 
               <figcaption>
                 <p>
-                  Oye Wilson, voy a extirpar un ojo a un quisiado... quieres verr... suena interesante
+                  Encuentra un lugar donde aprender sonbre musica andina , hay muchas categorias....
                 </p>
               </figcaption>
 
-              <a href="#">
-                Continue Reading
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                  <path d="M4 8h8l-3-3 1-1 4 4-4 4-1-1 3-3H4z"/>
-                </svg>
+              <a href="../../pages/proyectos/tallermusica.php">
+                Visitar 
               </a>
 
             </div>
@@ -136,22 +134,19 @@
           <figure class="cards">
             <div class="cardPopout">
 
-              <img src="../assets/img/img_proyectos/carrusel6.jpg" alt="Proyecto">
+              <img src="../assets/img/img_proyectos/carrusel6.jpeg" alt="Proyecto">
 
-              <h2>House</h2>
-              <h4>con flutershy?</h4>
+              <h2>Teatro</h2>
+              <h4>Taller de Teatro</h4>
 
               <figcaption>
                 <p>
-                  House es un doctor muy inteligente pero con mal genio, siempre anda con su flutershy que lo ayuda a calmarse.
+                  En esta seccion podras saber nuestro grupo sobre la teatralisacion y como ser parte de la familia para nuestras futuras actuaciones
                 </p>
               </figcaption>
 
-              <a href="#">
-                Continue Reading
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                  <path d="M4 8h8l-3-3 1-1 4 4-4 4-1-1 3-3H4z"/>
-                </svg>
+              <a href="../../pages/proyectos/tallerteatro.php">
+                Visitar
               </a>
 
             </div>
@@ -162,22 +157,19 @@
           <figure class="cards">
             <div class="cardPopout">
 
-              <img src="../assets/img/img_proyectos/carrusel4.jpg" alt="Proyecto">
+              <img src="../assets/img/img_proyectos/carrusel4.jpeg" alt="Proyecto">
 
-              <h2>Cuddy</h2>
-              <h4>La jefa de House</h4>
+              <h2>Contactanos</h2>
+              <h4>Nosotros te Escucharemos</h4>
 
               <figcaption>
                 <p>
-                  La Dra. Cuddy es la directora del hospital, y la que le puede dar chingadasos a House cuando se porta mal.
+                  Quieres una actuacion o tienes una que quieras compartir.. Puedes contactarnos con nosotros para asi coordinar y demostrar tu obra, ser parte de nosotros o solicitarnos
                 </p>
               </figcaption>
 
-              <a href="#">
-                Continue Reading
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                  <path d="M4 8h8l-3-3 1-1 4 4-4 4-1-1 3-3H4z"/>
-                </svg>
+              <a href="../../pages/contacto.php">
+                contactanos aqui!!
               </a>
 
             </div>
