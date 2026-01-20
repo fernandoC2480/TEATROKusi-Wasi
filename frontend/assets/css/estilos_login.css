@@ -154,3 +154,23 @@
     border: 1px solid #f5c6cb;
     color: #721c24;
 }
+.google{
+    text-align: center;
+    margin-top: 15px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 15px;
+}
+.google a{
+    color: #ee4135;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.google a:hover{
+    text-decoration: underline;
+    color: black;
+}
