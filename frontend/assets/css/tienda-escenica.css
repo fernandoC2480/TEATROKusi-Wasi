@@ -11,7 +11,9 @@
 body {
   background: radial-gradient(circle at top, #1a0f05, #000);
 }
-
+h1{
+  color: #ff9b00;
+}
 /* ===============================
    CONTENEDOR
 =============================== */

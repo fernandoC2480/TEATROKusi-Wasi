@@ -38,7 +38,6 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php') {
         echo "<link rel=\"stylesheet\" href=\"../../assets/css/tienda-escenica.css\">\n";
         echo "<link rel=\"stylesheet\" href=\"../../assets/css/estilos_flecha.css\">\n";
-        
     }
     ?>
 <main>
