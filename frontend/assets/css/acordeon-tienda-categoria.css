@@ -233,7 +233,13 @@
     0 0 20px var(--accent),
     0 0 40px rgba(212,175,55,.45);
 }
-
+.Elt {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #dd910d;
+    text-align: center;
+    position: relative;
+    top: 0px;           /* mueve la imagen más arriba */
+}
 /* ===============================
    ANIMACIONES
 =============================== */

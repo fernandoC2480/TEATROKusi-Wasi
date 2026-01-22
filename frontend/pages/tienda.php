@@ -107,7 +107,7 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     </div>
      <!-- fin de acordeon de categorias -->
-    <div class="seccion-titulos text-center">
+    <div class="Elt">
         <h1>Recuerdos que mantienen viva la función</h1>
     </div>
 
