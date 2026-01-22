@@ -35,19 +35,19 @@
 =============================== */
 
 .option.ropa {
-  --optionBackground: url("../../assets/img/img_proyectos/crrusel3.png");
+  --optionBackground: url("../../assets/img/img_tienda/Vestuario.png");
 }
 
 .option.accesorios {
-  --optionBackground: url("../../assets/img/img_proyectos/crrusel3.png");
+  --optionBackground: url("../../assets/img/img_tienda/accesorios.png");
 }
 
 .option.libros {
-  --optionBackground: url("../../assets/img/img_proyectos/crrusel3.png");
+  --optionBackground: url("../../assets/img/img_tienda/libros.png");
 }
 
 .option.recuerdos {
-  --optionBackground: url("../../assets/img/img_proyectos/crrusel3.png");
+  --optionBackground: url("../../assets/img/img_tienda/recuerdos.png");
 }
 
 /* ===============================

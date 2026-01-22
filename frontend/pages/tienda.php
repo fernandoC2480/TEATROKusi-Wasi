@@ -46,9 +46,10 @@ $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/cards.css">
 <link rel="stylesheet" href="../assets/css/estilos_flecha.css">
 <link rel="stylesheet" href="../../assets/css/acordeon-tienda-categoria.css">
@@ -130,7 +131,7 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             );
             ?>
 
-            <a href="producto.php?id=<?= $producto['id']; ?>" class="card">
+        <a href="producto.php?id=<?= $producto['id']; ?>" class="card">
 
             <div class="card-inner">
                 <div class="box">
@@ -143,12 +144,17 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <!-- BOTÓN CARRITO (solo visual por ahora) -->
                 <div class="icon">
-                    <div class="iconBox">
-                    <i class="fas fa-cart-shopping"></i>
-                    </div>
-                </div>
+                <button class="iconBox btn-add-cart" 
+                        data-product-id="<?= $producto['id']; ?>" 
+                        aria-label="Agregar <?= htmlspecialchars($producto['nombre']); ?> al carrito">
+                    <!-- Icono SVG seguro -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#dfaf0f" viewBox="0 0 24 24">
+                        <path d="M7 4h-2l-1 2h2l3 8h8l3-8h2l-1-2h-2l-1 2h-8l-1-2zm2 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm8 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                </button>
+            </div>
 
-                </div>
+            </div>
             </div>
 
             <!-- CONTENIDO -->
@@ -156,15 +162,17 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <h3><?= htmlspecialchars($producto['nombre']); ?></h3>
 
                 <ul class="categorias">
-                <li class="<?= $clase_categoria; ?>">
-                    <?= htmlspecialchars($producto['categoria_nombre']); ?>
-                </li>
+                    <li class="<?= $clase_categoria; ?>">
+                        <?= htmlspecialchars($producto['categoria_nombre']); ?>
+                    </li>
                 </ul>
 
                 <p><?= htmlspecialchars($producto['descripcion']); ?></p>
-            </div>
 
-            </a>
+                <!-- PRECIO -->
+                <p class="precio">S/. <?= number_format($producto['precio'], 2); ?></p>
+            </div>
+        </a>
 
         <?php endforeach; ?>
         <?php else: ?>
