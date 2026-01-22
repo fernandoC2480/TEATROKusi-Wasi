@@ -1,0 +1,275 @@
+/* ===============================
+   RESET
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ===============================
+   CONTENEDOR
+=============================== */
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 1700px;
+  height: 460px;
+  padding: 40px 20px;
+  margin: 0 auto 40px;
+
+}
+
+/* ===============================
+=============================== */
+.option {
+  background:
+    linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.2)),
+    var(--optionBackground) center / cover no-repeat;
+}
+/* ===============================
+   IMÁGENES DEL ACORDEÓN
+=============================== */
+
+.option.ropa {
+  --optionBackground: url("../../assets/img/img_proyectos/crrusel3.png");
+}
+
+.option.accesorios {
+  --optionBackground: url("../../assets/img/img_proyectos/crrusel3.png");
+}
+
+.option.libros {
+  --optionBackground: url("../../assets/img/img_proyectos/crrusel3.png");
+}
+
+.option.recuerdos {
+  --optionBackground: url("../../assets/img/img_proyectos/crrusel3.png");
+}
+
+/* ===============================
+   CARD BASE
+=============================== */
+.option {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 70px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.2)),
+    var(--optionBackground) center / cover no-repeat;
+
+  transition:
+    flex-grow 0.8s cubic-bezier(.05,.61,.41,.95),
+    filter 0.5s ease;
+
+  animation: breathing-sync 10s ease-in-out infinite;
+}
+/* ===============================
+   ACORDEÓN FULL WIDTH
+=============================== */
+
+.options {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-top: -20px; /* mismo efecto visual */
+  transform: none;
+
+}
+.option {
+  min-width: 80px;
+}
+
+/* ===============================
+   COLORES POR CATEGORÍA
+=============================== */
+.option { --accent: #d4af37; }
+.option.ropa { --accent: #c0392b; }
+.option.libros { --accent: #2980b9; }
+.option.accesorios { --accent: #8e44ad; }
+.option.recuerdos { --accent: #d4af37; }
+
+/* ===============================
+   ACTIVA / INACTIVA
+=============================== */
+.option.active {
+  flex-grow: 10;
+  filter: brightness(1);
+  animation:
+    breathing-sync 10s ease-in-out infinite,
+    pulse-accent 6s ease-in-out infinite;
+}
+
+.option:not(.active) {
+  filter: brightness(0.6);
+}
+
+/* ===============================
+   SOMBRA
+=============================== */
+.shadow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at bottom, rgba(0,0,0,.8), transparent 70%);
+}
+
+/* ===============================
+   ICONO
+=============================== */
+.icone {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+  color: #b08d2e;
+
+  background: radial-gradient(circle, #000000, var(--accent));
+  box-shadow: 0 0 14px var(--accent);
+
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+
+  transition: all 0.6s ease;
+}
+
+/* expandida → esquina */
+.option.active .icone {
+  left: 26px;
+  transform: none;
+  box-shadow:
+    0 0 20px var(--accent),
+    0 0 40px rgba(212,175,55,.4);
+}
+
+/* ===============================
+   TEXTO
+=============================== */
+.info {
+  color: #b08d2e;
+  position: absolute;
+  bottom: 26px;
+  left: 96px;
+
+  opacity: 0;
+  transform: translateX(20px);
+  transition: 0.5s ease;
+}
+
+.option.active .info {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.info .main {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.info .sub {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ===============================
+   BOTÓN CEREMONIAL
+=============================== */
+.btn-categoria {
+  position: absolute;
+  right: 26px;
+  bottom: 26px;
+
+  padding: 10px 22px;
+  border-radius: 30px;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  text-decoration: none;
+  color: #2b1a0f;
+
+  background: linear-gradient(
+    135deg,
+    #fff,
+    var(--accent)
+  );
+
+  box-shadow: 0 0 18px rgba(0,0,0,.4);
+
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+
+  transition: 0.5s ease;
+}
+
+/* solo en activa */
+.option.active .btn-categoria {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.btn-categoria:hover {
+  box-shadow:
+    0 0 20px var(--accent),
+    0 0 40px rgba(212,175,55,.45);
+}
+
+/* ===============================
+   ANIMACIONES
+=============================== */
+@keyframes breathing-sync {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse-accent {
+  0% { box-shadow: 0 0 0 transparent; }
+  50% { box-shadow: 0 0 36px var(--accent); }
+  100% { box-shadow: 0 0 0 transparent; }
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 900px) {
+  .options {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .option {
+    min-height: 180px;
+  }
+
+  .icone {
+    left: 22px;
+    transform: none;
+  }
+
+  .info,
+  .btn-categoria {
+    opacity: 1;
+    transform: none;
+  }
+}

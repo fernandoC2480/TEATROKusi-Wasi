@@ -25,88 +25,155 @@ $pagina_actual = min($pagina_actual, max(1, $total_paginas));
 $offset = ($pagina_actual - 1) * $productos_por_pagina;
 
 // Obtener productos de la base de datos con paginación
-$query = "SELECT id, nombre, descripcion, precio, imagen, stock FROM productos WHERE estado = TRUE ORDER BY id DESC LIMIT :limit OFFSET :offset";
+$query = "
+    SELECT 
+        p.id,
+        p.nombre,
+        p.descripcion,
+        p.precio,
+        p.imagen,
+        p.stock,
+        c.nombre AS categoria_nombre
+    FROM productos p
+    INNER JOIN categorias_tienda c ON p.categoria_id = c.id
+    WHERE p.estado = TRUE
+    ORDER BY p.id DESC
+    LIMIT :limit OFFSET :offset
+";
 $stmt = $conn->prepare($query);
 $stmt->bindValue(':limit', $productos_por_pagina, PDO::PARAM_INT);
 $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-    <?php
-    // Cargar CSS específico para páginas (ej. tienda)
-    $script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
-    if (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php') {
-        echo "<link rel=\"stylesheet\" href=\"../../assets/css/tienda-escenica.css\">\n";
-        echo "<link rel=\"stylesheet\" href=\"../../assets/css/estilos_flecha.css\">\n";
-    }
-    ?>
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="../assets/css/cards.css">
+<link rel="stylesheet" href="../assets/css/estilos_flecha.css">
+<link rel="stylesheet" href="../../assets/css/acordeon-tienda-categoria.css">
+ 
 <main>
-    <div class="imgtienda">
-        <img src="../assets/img/imgcarrusel1.png" alt="">
+    <!-- acordeon de categorias -->
+    <div class="options">
+        <div class="option ropa active">
+            <div class="shadow"></div>
+            <div class="label">
+            <div class="icone"><i class="fas fa-shirt"></i></div>
+            <div class="info">
+                <div class="main">Ropa</div>
+                <div class="sub">Tradición viva</div>
+            </div>
+            <a href="#" class="btn-categoria">Ver categoría</a>
+            </div>
+        </div>
+
+        <div class="option accesorios">
+            <div class="shadow"></div>
+            <div class="label">
+            <div class="icone"><i class="fas fa-gem"></i></div>
+            <div class="info">
+                <div class="main">Accesorios</div>
+                <div class="sub">Cosmovisión andina</div>
+            </div>
+            <a href="#" class="btn-categoria">Ver categoría</a>
+            </div>
+        </div>
+
+        <div class="option libros">
+            <div class="shadow"></div>
+            <div class="label">
+            <div class="icone"><i class="fas fa-book-open"></i></div>
+            <div class="info">
+                <div class="main">Libros</div>
+                <div class="sub">Sabiduría ancestral</div>
+            </div>
+            <a href="#" class="btn-categoria">Ver categoría</a>
+            </div>
+        </div>
+
+        <div class="option recuerdos">
+            <div class="shadow"></div>
+            <div class="label">
+            <div class="icone"><i class="fas fa-sun"></i></div>
+            <div class="info">
+                <div class="main">Recuerdos</div>
+                <div class="sub">Espíritu andino</div>
+            </div>
+            <a href="#" class="btn-categoria">Ver categoría</a>
+            </div>
+        </div>
+
     </div>
+     <!-- fin de acordeon de categorias -->
     <div class="seccion-titulos text-center">
         <h1>Recuerdos que mantienen viva la función</h1>
     </div>
 
     <!-- Sección de Productos -->
-    <div class="productos-container">
+     <!-- Sección de Productos -->
+    <section class="tienda">
+    <div class="container">
+
         <?php if ($productos): ?>
-            <?php foreach ($productos as $producto): ?>
-                    <div class="tienda-card">
+        <?php foreach ($productos as $producto): ?>
 
-                        <!-- Halo -->
-                        <div class="tienda-halo"></div>
+            <?php
+            // clase CSS según categoría
+            $clase_categoria = 'cat-' . strtolower($producto['categoria_nombre']);
 
-                        <!-- Imagen (tu lógica se mantiene) -->
-                        <div class="tienda-img">
-                        <?php
-                            $imgPath = getProductImagePath(
-                            $producto['imagen'],
-                            $producto['id'],
-                            $producto['nombre']
-                            );
-                        ?>
-                        <img
-                            src="<?= htmlspecialchars($imgPath, ENT_QUOTES); ?>"
-                            alt="<?= htmlspecialchars($producto['nombre']); ?>">
-                        </div>
+            // imagen
+            $imgPath = getProductImagePath(
+                $producto['imagen'],
+                $producto['id'],
+                $producto['nombre']
+            );
+            ?>
 
-                        <!-- Contenido -->
-                        <div class="tienda-content">
+            <a href="producto.php?id=<?= $producto['id']; ?>" class="card">
 
-                        <h3 class="tienda-title">
-                            <?= htmlspecialchars($producto['nombre']); ?>
-                        </h3>
+            <div class="card-inner">
+                <div class="box">
 
-                        <p class="tienda-desc">
-                            <?= htmlspecialchars($producto['descripcion']); ?>
-                        </p>
+                <div class="imgBox">
+                    <img
+                    src="<?= htmlspecialchars($imgPath); ?>"
+                    alt="<?= htmlspecialchars($producto['nombre']); ?>">
+                </div>
 
-                        <div class="tienda-stock <?= $producto['stock'] > 0 ? 'ok' : 'out'; ?>">
-                            <?= $producto['stock'] > 0 ? 'Stock: '.$producto['stock'] : 'Agotado'; ?>
-                        </div>
-
-                        <div class="tienda-accion">
-                            <div class="tienda-precio">
-                                S/. <?= number_format($producto['precio'], 2); ?>
-                            </div>
-
-                            <button
-                                class="tienda-btn"
-                                <?= $producto['stock'] <= 0 ? 'disabled' : ''; ?>>
-                                Agregar
-                            </button>
-                            </div>
-                        </div>
+                <!-- BOTÓN CARRITO (solo visual por ahora) -->
+                <div class="icon">
+                    <div class="iconBox">
+                    <i class="fas fa-cart-shopping"></i>
                     </div>
-            <?php endforeach; ?>
+                </div>
 
-        <?php else: ?>
-            <div class="sin-productos">
-                <p>No hay productos disponibles en este momento.</p>
+                </div>
             </div>
+
+            <!-- CONTENIDO -->
+            <div class="content">
+                <h3><?= htmlspecialchars($producto['nombre']); ?></h3>
+
+                <ul class="categorias">
+                <li class="<?= $clase_categoria; ?>">
+                    <?= htmlspecialchars($producto['categoria_nombre']); ?>
+                </li>
+                </ul>
+
+                <p><?= htmlspecialchars($producto['descripcion']); ?></p>
+            </div>
+
+            </a>
+
+        <?php endforeach; ?>
+        <?php else: ?>
+        <p>No hay productos disponibles.</p>
         <?php endif; ?>
+
     </div>
+    </section>
+
 
     <!-- Sección de Paginación -->
     <?php if ($total_paginas > 1): ?>
@@ -141,4 +208,5 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
 <script src="../assets/js/scroll-arrow.js"></script>
+<script src="../../assets/js/acordeon_tienda.js"></script>
 <?php include '../includes/footer.php'; ?>

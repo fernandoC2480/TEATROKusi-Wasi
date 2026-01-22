@@ -90,18 +90,8 @@
 
 /* --- FOOTER RESPONSIVE --- */
 @media (max-width: 767px) {
-
-  .footer-title,
-  .footer-list {
-    text-align: center;
+  .site-footer {
+    padding-left: 10px;
+    padding-right: 10px;
   }
-
-  .contact-large i {
-    font-size: 3rem;
-  }
-
-  .imgfooter {
-    height: 30px;
-  }
-
 }

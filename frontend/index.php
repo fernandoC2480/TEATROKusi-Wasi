@@ -174,12 +174,9 @@ include 'includes/header.php';
 </div>
 <button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
 <script src="../assets/js/scroll-arrow.js"></script>
-<?php include 'includes/footer.php'; ?>
-
-<!--CONEXION CON JAVA-->
 <script src="assets/js/carruselindex.js"></script>
 <script src="../../assets/js/nosotron_card.js"></script>
 <script src="../../assets/js/proyectos_card.js"></script>
 
-</body>
-</html>
+
+<?php include 'includes/footer.php'; ?>
