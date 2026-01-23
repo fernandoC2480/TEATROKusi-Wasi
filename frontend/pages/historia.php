@@ -18,32 +18,26 @@
             integrante del reconocido grupo de teatro Yuyachkani de Lima. Desde sus inicios, la agrupación
             se enfocó en la creación de propuestas escénicas basadas en la cultura ancestral andina,
             integrando elementos históricos, simbólicos y espirituales propios de los pueblos originarios.
-        </p>
 
-        <p>
             Hasta el año 2010, la agrupación fue conocida como “Teatro Andino Kusi Wasi”. En el año 2011,
             por motivos de formalización legal, adoptó la razón social Producciones Artísticas Luz Sagrada
             Sociedad de Responsabilidad Limitada (PALS SRL), manteniendo hasta la actualidad el nombre
             comercial de Teatro Andino Kusi Wasi. Actualmente, la dirección está a cargo de la Profesora
             Marilú Flores Ayerbe.
-        </p>
 
-        <p>
             A lo largo de su trayectoria, el teatro ha trabajado con niños, jóvenes y adultos, desarrollando
             montajes que rescatan, cultivan y mantienen viva la cultura andina.
-        </p>
+ 
 
-        <p>
             Entre sus producciones más representativas destaca la obra
             <strong>“El Florecimiento de los Dioses Andinos”</strong>, considerada su obra maestra.
-        </p>
+     
 
-        <p>
+    
             Asimismo, el grupo ha producido obras de temática ecológica, costumbrista y socio-religiosa,
             y ha desarrollado talleres gratuitos de teatro, música y danza.
-        </p>
-
-        <p>
+    
+        
             Antes de la emergencia sanitaria, el Teatro Andino Kusi Wasi brindó empleo a diversos artistas
             y mantuvo una intensa actividad cultural.
         </p>
