@@ -1,3 +1,13 @@
+<?php
+// 1. Iniciamos sesión para poder leer los datos del login
+if (session_status() === PHP_SESSION_NONE) { 
+    session_start(); 
+}
+
+// Variable para saber si estamos en la tienda
+$script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
+$es_tienda = (strpos($script, '/pages/tienda.php') !== false || basename($script) === 'tienda.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -85,16 +95,29 @@
             </a>
           </li>
 
-          <!-- Icono Login Desktop -->
+          <!-- Autenticación -->
           <li>
-            <a href="#" class="login-circle">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd"
-                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-              </svg>
-            </a>
-          </li>
+              <?php if (isset($_SESSION['user_name'])): ?>
+                  <div class="dropdown">
+                      <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 20px; border: 2px solid #fff;">
+                          <i class="bi bi-person-check-fill"></i> 
+                              Hola, <?php echo htmlspecialchars($_SESSION['user_name']); ?>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../../backend/src/auth/logout.php">Cerrar Sesión</a></li>
+                            </ul>
+                          </div>
+                        <?php else: ?>
+                          <a href="../../pages/loging.php" class="login-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg>
+                          </a>
+                        <?php endif; ?>
+            </li>
 
         </ul>
       </nav>
