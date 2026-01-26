@@ -1,4 +1,5 @@
 <footer class="site-footer">
+<link rel="stylesheet" href="../../assets/css/footer.css">    
     <!-- Franja de símbolos superior -->
     <div class="imgfooter"></div>
 

@@ -101,4 +101,60 @@ $es_tienda = (strpos($script, '/pages/tienda.php') !== false || basename($script
             </div>
         </div>
     </div>
+  </div>
+
+<!-- HEADER MÓVIL -->
+<div class="mobile-header">
+
+  <button class="menu-toggle" aria-label="Abrir menú">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <a href="../../index.php" class="mobile-logo">
+    <img src="../../assets/img/logo.png" alt="Logo Kusiwasi">
+  </a>
+
+  <div class="mobile-title">
+    <?= basename($_SERVER['PHP_SELF']) === 'index.php'
+      ? 'Inicio'
+      : ucfirst(str_replace('.php','',basename($_SERVER['PHP_SELF']))) ?>
+  </div>
+
+  <a href="../../pages/login.php" class="btn btn-outline-warning mobile-login-btn">
+    <i class="bi bi-person"></i>
+  </a>
+
+</div>
+
+<!-- MENÚ MÓVIL -->
+<nav class="mobile-nav">
+  <ul class="mobile-menu">
+
+    <li><a href="../../index.php">Inicio</a></li>
+    <li><a href="../../pages/cartelera.php">Acciones Teatrales</a></li>
+    <li><a href="../../pages/tienda.php">Tienda</a></li>
+
+    <li class="has-submenu">
+      <a href="../../pages/proyectos.php" class="submenu-toggle">Proyectos</a>
+      <ul class="submenu">
+        <li><a href="../../pages/proyectos.php">Proyectos</a></li>
+        <li><a href="../../pages/proyectos/tallerteatro.php">Taller de Teatro</a></li>
+        <li><a href="../../pages/proyectos/tallermusica.php">Taller de Música</a></li>
+      </ul>
+    </li>
+
+    <li class="has-submenu">
+      <a href="../../pages/historia.php" class="submenu-toggle">Nosotros</a>
+      <ul class="submenu">
+        <li><a href="../../pages/historia.php">Nosotros</a></li>
+        <li><a href="../../pages/historia.php">Historia</a></li>
+        <li><a href="../../pages/misionvision.php">Misión y Visión</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+
 </header>
+
+<script src="../../assets/js/header.js"></script>
