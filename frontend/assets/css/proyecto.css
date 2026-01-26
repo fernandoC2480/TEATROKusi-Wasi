@@ -1,3 +1,4 @@
+
 /* Contenedor principal */
 .contenedor_proyectos {
     display: flex;
@@ -330,4 +331,24 @@
         font-size: 28px;
         text-align: center;
     }
+}
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* elimina scroll lateral */
+}
+
+.cards-container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .titulo2 {
+    white-space: normal; /* permite saltos de línea */
+  }
+  .card::after {
+    display: none; /* evita que el separador empuje el layout */
+  }
 }
