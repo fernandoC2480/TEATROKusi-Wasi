@@ -1,4 +1,5 @@
 <?php include '../../includes/header.php'; ?>
+<link rel="stylesheet" href="../../assets/css/estilos_index.css">
 <link rel="stylesheet" href="../../assets/css/estilos_flecha.css">
 
 <!-- SECCIÓN DEL VIDEO -->

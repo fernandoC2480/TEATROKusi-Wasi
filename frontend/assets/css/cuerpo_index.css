@@ -1,30 +1,44 @@
-/*parte titulo con flor*/
 .titulo1 {
-    position: relative;      
+    position: relative;
     width: 100%;
-    height: 200px;
+    min-height: 140px;
 }
 
 /* Flor */
 .flor {
     position: absolute;
-    top: 50%;                
-    left: 10%;              
+    top: 50%;
+    left: 10%;
     transform: translate(-50%, -50%);
-    width: 80px;           
+    width: clamp(45px, 6vw, 80px);
 }
 
 /* Texto */
 .texto-titulo {
     position: absolute;
-    top: 38%;               
-    left:15%;             
-    font-weight: 840;
+    top: 50%;
+    left: 18%;
+    transform: translateY(-50%);
     font-family: 'Alegreya', serif;
-    font-size: 60px;
+    font-weight: 840;
+    font-size: clamp(28px, 6vw, 60px);
     color: #dd910d;
-    letter-spacing: 2px;     
+    letter-spacing: 2px;
 }
+@media (max-width: 768px) {
+    .flor {
+        left: 50%;
+        top: 20%;
+    }
+
+    .texto-titulo {
+        left: 50%;
+        top: 65%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+
 /* Contenedor general */
 .actuaciones {
     display: grid;
@@ -38,7 +52,7 @@
 /* Card */
 .actuacion {
     position: relative;
-    height: 670px;
+    height: clamp(480px, 80vh, 670px);
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 1 10px 25px rgba(212, 40, 2, 0.15);
@@ -143,37 +157,48 @@ h1, h2, h3 {
 }
 /*parte titulo 2*/
 /*parte titulo con patron*/
-.titulo2 {
-    position: relative;      /* REFERENCIA */
-    width: 100%;
-    height: 200px;
-}
+
 
 /* patron */
-.patron {
-    position: absolute;
-    top: 50%;                /* mover vertical */
-    left: 22%;               /* mover horizontal */
-    transform: translate(-50%, -50%);
-    width: 520px;             /* tamaño exacto */
+.titulo2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
 }
+
+/* Patrones */
+.patron,
 .patron1 {
     position: absolute;
-    top: 50%;                /* mover vertical */
-    left: 78%;               /* mover horizontal */
-    transform: translate(-50%, -50%);
-    width: 520px;             /* tamaño exacto */
+    top: 50%;
+    width: clamp(220px, 40vw, 520px);
+    transform: translateY(-50%);
 }
+
+.patron { left: 0; }
+.patron1 { right: 0; }
+
 /* Texto */
 .texto-titulo2 {
-    position: absolute;
-    top: 32%;                /* mover vertical */
-    left: 41.2%;               /* mover horizontal */
-    font-weight: 840;
+    position: relative;
     font-family: 'Caesar Dressing', cursive;
-    font-size: 60px;
+    font-size: clamp(28px, 6vw, 60px);
     color: #dd910d;
-    letter-spacing: 2px;     /* control de letras */
+    letter-spacing: 2px;
+    z-index: 2;
+}
+@media (max-width: 768px) {
+    .patron,
+    .patron1 {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .flor{
+        display: none;
+    }
 }
 /*parte contenido nosotros*/
 /* Contenedor para centrar la card */
@@ -189,7 +214,8 @@ h1, h2, h3 {
   position: relative;
   width: 100%;
   max-width: 1320px;
-  height: 700px;
+  height:auto;
+  min-height: 500px;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
@@ -216,9 +242,9 @@ h1, h2, h3 {
   bottom: 0;
   left: 0;
   width: 100%;
-
-  height: 50%;              
-  padding: 60px 60px;       
+  height: auto;              
+  padding: clamp(20px, 5vw, 60px);
+  flex-wrap: wrap;     
 
  background:
   linear-gradient(to top,
@@ -235,6 +261,21 @@ h1, h2, h3 {
   align-items: center;
   gap: 40px;
 }
+@media (max-width: 768px) {
+    .card-overlayN {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-textN {
+        max-width: 100%;
+    }
+
+    .card-btnN {
+        align-self: center;
+    }
+}
+
 /* ================= CONTENIDO ================= */
 .reveal-text {
   display: flex;
@@ -356,6 +397,7 @@ h1, h2, h3 {
 
 .proy1,
 .proy2 {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   gap: 50px;
@@ -386,6 +428,22 @@ h1, h2, h3 {
   flex-shrink: 0;
   order: 2;
   margin-top: -200px; 
+}
+@media (max-width: 768px) {
+    .proy1,
+    .proy2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .proy2 img {
+        margin-top: 0;
+    }
+    .inf1,
+    .inf2 {
+        text-align: center;
+    }
 }
 
 /* Responsive: en pantallas pequeñas volver a apilar y cancelar margen negativo */
@@ -576,15 +634,14 @@ button:active {
   width: fit-content;
   white-space: nowrap;
 
-  padding: 8px 22px;
+  padding: clamp(7px, 2vw, 10px) clamp(18px, 4vw, 28px);
   border-radius: 30px;
   border: none;
   cursor: pointer;
 
   background: linear-gradient(145deg, #9d0606, #600000);
   color: #ffffff;
-
-  font-size: 13px;
+  font-size: clamp(12px, 2.5vw, 14px);
   font-weight: 600;
   letter-spacing: 0.6px;
 
@@ -629,4 +686,62 @@ button:active {
   transform: translateY(0);
   box-shadow:
     0 6px 15px rgba(157, 6, 6, 0.5);
+}
+/* ================= SOLUCIÓN OVERFLOW ================= */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+}
+
+/* ================= ANIMACIONES SEGURAS ================= */
+
+.left-img {
+  transform: translateX(-30%);
+}
+
+.right-img {
+  transform: translateX(30%);
+}
+
+.reveal-card.left .img-anim {
+  transform: translateX(-30%);
+}
+
+.reveal-card.right .img-anim {
+  transform: translateX(30%);
+}
+
+.reveal-card.active .img-anim,
+.reveal-card.active .img-wrap {
+  transform: translateX(0);
+}
+
+/* ================= PROYECTO 2 FIX ================= */
+
+.proy2 img {
+  margin-top: 0;
+  transform: translateY(-80px);
+}
+
+@media (max-width: 768px) {
+  .proy2 img {
+    transform: none;
+  }
+}
+
+/* ================= MOBILE EXTRA ================= */
+
+@media (max-width: 480px) {
+  .proy1 img,
+  .proy2 img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 }

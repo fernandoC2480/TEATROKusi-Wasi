@@ -147,3 +147,49 @@ body {
     padding: 0 15px 20px;
   }
 }
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* elimina scroll lateral */
+}
+
+.cards-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ← fuerza 3 columnas */
+  gap: 40px;
+}
+
+@media (max-width: 1024px) {
+  .titulo2 {
+    white-space: normal; /* permite saltos de línea */
+  }
+  .card::after {
+    display: none; /* evita que el separador empuje el layout */
+  }
+}
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    gap: 30px;
+  }
+
+  .card::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+    gap: 25px;
+  }
+
+  .card {
+    padding: 0 15px 20px;
+  }
+}
