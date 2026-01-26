@@ -1,9 +1,11 @@
 <?php include '../includes/header.php'; ?>
 
 <link rel="stylesheet" href="/assets/css/misionvision.css">
+<section class="hero-misionvision"></section>
+
 
 <section class="text-center">
-    <img src="/assets/img/mision.jpg" class="img-fluid" width="1500" alt="Misión y Visión">
+    <img src="/assets/img/mision2.0.jpg" class="img-fluid" width="1500" alt="Misión y Visión">
 </section>
 
 <main class="container my-5">
