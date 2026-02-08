@@ -63,7 +63,7 @@ body {
 
 .logo {
   position: absolute;
-  left: -50px; /* ajustar según sea necesario , izquierda, derecha  */
+  left: 0;
   pointer-events: none; /* no bloquea el menú */
 }
 
