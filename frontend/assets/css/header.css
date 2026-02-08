@@ -1,0 +1,464 @@
+
+/* --- 1. RESET Y BASES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                          url('../../assets/img/imgcarrusel1.png') !important;
+        background-attachment: fixed !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-color: #000 !important;
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+}
+body {
+  padding-top: 118px;
+}
+
+
+/* =========================
+   HEADER BASE
+========================= */
+
+.site-header {
+  width: 100%;
+}
+
+/* Fondo del header */
+.header-bg {
+  background: #000 url('../img/U.png') repeat;
+  background-size: auto 98%;
+  height: 118px;
+  padding: 10px 0;
+  overflow: visible; /* 🔥 importante */
+}
+
+/* Contenedor real */
+.header-inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible; /* 🔥 importante */
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  position: absolute;
+  left: -50px; /* ajustar según sea necesario , izquierda, derecha  */
+  pointer-events: none; /* no bloquea el menú */
+}
+
+.logo img {
+  height: 145px;
+  filter: drop-shadow(0 6px 10px rgba(230, 138, 2, 0.6));
+}
+
+/* =========================
+   MENÚ PRINCIPAL
+========================= */
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.nav {
+  overflow: visible;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+/* links principales */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 6px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #AE8E1C;
+}
+
+/* =========================
+   SUBMENU
+========================= */
+
+.submenu {
+  display: none;              /* 🔥 CLAVE */
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.95);
+  border-radius: 20px;
+  min-width: 180px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+
+  border-top: 3px solid #b08d2e;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* mostrar submenu */
+.has-submenu:hover > .submenu {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+/* links submenu */
+.submenu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #fffcfc;
+  white-space: nowrap;
+
+}
+
+.submenu li a:hover {
+
+  color: #b08d2e;
+}
+
+/* animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* item activo */
+.nav-links a {
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+.nav-links a.active {
+  position: relative;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 3px 14px;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1;
+  transform: scale(1.05);
+}
+
+/* fondo animado */
+.nav-links a.active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background-image: url("../img/decoraciont.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  animation: bgLoop 8s linear infinite;
+  opacity: 0.65;
+  z-index: -1;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/patron-menu.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  opacity: 0;
+  z-index: -1;
+}
+
+
+
+
+/* --- 5. ICONOS DE USUARIO / LOGIN --- */
+.login-circle {
+    border: 0px solid #b08d2e;
+    border-radius: 100%;
+    padding: 5px;
+    display: flex;
+    transition: all 0.3s;
+}
+
+.login-circle svg {
+    width: 35px;
+    height: 35px;
+}
+
+.login-circle:hover {
+    background-color: #b08d2e;
+    color: black !important;
+}
+/* animación tipo carrusel */
+@keyframes bgLoop {
+  from {
+    background-position: 0 0;
+
+  }
+  to {
+    background-position: -170px 0;
+
+  }
+}
+
+/* =========================
+   HEADER MÓVIL
+========================= */
+@media (max-width: 991px) {
+
+  /* ocultar header desktop */
+  .header-bg {
+    display: none;
+  }
+
+  /* ===== BARRA SUPERIOR ===== */
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 64px;
+    background: #000 url('../img/U.png') repeat;
+    background-size: auto 98%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 12px;
+    z-index: 9999;
+  }
+
+  /* botón menú */
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  /* logo */
+  .mobile-logo {
+    margin-left: 4px;
+  }
+
+  .mobile-logo img {
+    height: 82px;
+    width: auto;
+    display: block;
+  }
+
+  /* título central */
+  .mobile-title {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* botón login */
+  .mobile-login-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  /* =========================
+     MENÚ DESPLEGABLE
+  ========================= */
+  .mobile-nav {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+
+    background: #000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+
+    z-index: 9998;
+  }
+
+  /* cuando está abierto */
+  .mobile-nav.open {
+    transform: translateY(0);
+  }
+
+  /* lista principal */
+  .mobile-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-menu > li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 14px 18px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .mobile-menu a:hover {
+    background: rgba(176,141,46,0.15);
+    color: #b08d2e;
+  }
+
+  /* =========================
+     SUBMENÚ
+  ========================= */
+  .submenu {
+    display: none;
+    background: rgba(0,0,0,0.9);
+  }
+
+  .submenu li a {
+    padding-left: 32px;
+    font-size: 15px;
+    color: #ccc;
+  }
+
+  /* cuando se abre el submenú */
+  .has-submenu.open > .submenu {
+    display: block;
+  }
+}
+/* ================================
+   OCULTAR MENÚ MÓVIL EN DESKTOP
+================================ */
+.mobile-header,
+.mobile-nav {
+  display: none;
+}
+
+/* DESKTOP */
+.header-bg {
+  display: block;
+}
+
+.mobile-header {
+  display: none;
+}
+
+/* ===== HEADER MÓVIL ===== */
+@media (max-width: 991px) {
+
+  .header-bg {
+    display: none;
+  }
+
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 64px;
+    background: #000 url('../img/U.png') repeat;
+    background-size: auto 98%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 12px;
+    z-index: 9999;
+  }
+}
+/* ================================
+   HEADER Y MENÚ MÓVIL
+================================ */
+@media (max-width: 991px) {
+
+  /* Ocultar header desktop */
+  .header-bg {
+    display: none;
+  }
+
+  /* Mostrar header móvil */
+  .mobile-header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 64px;
+    background: #000 url('../img/U.png') repeat;
+    background-size: auto 98%;
+
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    z-index: 9999;
+  }
+
+  /* Menú desplegable */
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+
+    background: #000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 9998;
+  }
+
+  /* Menú abierto */
+  .mobile-nav.open {
+    transform: translateY(0);
+  }
+}

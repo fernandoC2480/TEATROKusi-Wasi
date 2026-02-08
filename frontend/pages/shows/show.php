@@ -31,6 +31,7 @@ $path_img = "../../assets/img/img_shows/";
 include '../../includes/header.php'; 
 ?>
 <link rel="stylesheet" href="../../assets/css/estilos_flecha.css">
+<link rel="stylesheet" href="../../assets/css/shows.css">
 
 <!-- SECCIÓN DEL VIDEO -->
 <section class="video-hero bg-transparent">
@@ -139,6 +140,39 @@ include '../../includes/header.php';
             document.getElementById('modalImage').src = src;
         }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+    const modalReserva = document.getElementById('modalReserva');
+    const tipoCliente = document.getElementById('tipoCliente');
+    const labelDoc = document.getElementById('labelDoc');
+    const campoEmpresa = document.getElementById('campoEmpresa');
+    const inputShow = document.getElementById('reservaShow');
+    
+    // 1. Al abrir el modal, capturar el nombre del Show desde la clase .reveal-title
+    modalReserva.addEventListener('show.bs.modal', function () {
+        const tituloShow = document.querySelector('.reveal-title').innerText;
+        inputShow.value = tituloShow;
+    });
+
+    // 2. Lógica para cambiar entre DNI y RUC / Mostrar empresa
+    tipoCliente.addEventListener('change', function() {
+        if (this.value === 'empresa') {
+            labelDoc.innerText = 'RUC';
+            campoEmpresa.style.display = 'block';
+            document.getElementById('empresa').setAttribute('required', 'true');
+        } else {
+            labelDoc.innerText = 'DNI';
+            campoEmpresa.style.display = 'none';
+            document.getElementById('empresa').removeAttribute('required');
+        }
+    });
+
+    // 3. Manejo del envío (Opcional: aquí puedes añadir tu lógica de envío por AJAX/PHP)
+    document.getElementById('formReserva').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Solicitud enviada para el show: ' + inputShow.value);
+        // Aquí iría tu fetch() o envío a un archivo .php
+    });
+});
 </script>
 <button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
 <script src="../../assets/js/scroll-arrow.js"></script>
