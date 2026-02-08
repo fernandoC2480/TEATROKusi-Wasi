@@ -21,7 +21,7 @@ include '../includes/header.php';
             ?>
 
             <!-- RUTA CLAVE: Sube dos niveles para salir de frontend/pages y entrar a backend -->
-            <form action="../../backend/src/auth/register_process.php" method="POST">
+            <form action="../backend/src/auth/register_process.php" method="POST">
                 <div class="form-group">
                     <label>Nombre Completo:</label>
                     <input type="text" name="nombre" required placeholder="Tu nombre">

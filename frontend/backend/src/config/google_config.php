@@ -1,24 +1,17 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) { 
-    session_start(); 
-}
+// Configuración de Google OAuth
 
-// Configuración de Google OAuth 2.0
 // IMPORTANTE: Obtén estas credenciales en https://console.cloud.google.com/
+// 1. Crea un proyecto en Google Cloud Console
+// 2. Habilita Google+ API
+// 3. Crea credenciales OAuth 2.0 (tipo Web Application)
+// 4. Reemplaza los valores abajo
 
-// Reemplaza con tus credenciales de Google Cloud Console
-define('GOOGLE_CLIENT_ID', '402918943873-mauh39h2i3e832l9b744gp518hlm99pc.apps.googleusercontent.com');
-define('GOOGLE_CLIENT_SECRET', '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');
+define('GOOGLE_CLIENT_ID', 'TU_GOOGLE_CLIENT_ID.apps.googleusercontent.com');
+define('GOOGLE_CLIENT_SECRET', 'TU_GOOGLE_CLIENT_SECRET');
+define('GOOGLE_REDIRECT_URI', 'http://localhost/TEATROKusi-Wasi/backend/src/auth/google_callback.php');
 
-// URL de redirección - DEBE SER IDÉNTICA A LA DE GOOGLE CLOUD CONSOLE
-define('GOOGLE_REDIRECT_URI', 'http://localhost/backend/src/auth/google_callback.php');
-
-// URL de API de Google
-define('GOOGLE_AUTH_URL', 'https://accounts.google.com/o/oauth2/v2/auth');
-define('GOOGLE_TOKEN_URL', 'https://www.googleapis.com/oauth2/v4/token');
-define('GOOGLE_USERINFO_URL', 'https://www.googleapis.com/oauth2/v1/userinfo');
-
-// Alcances (scopes) solicitados a Google
-define('GOOGLE_SCOPES', 'openid email profile');
+// Para producción, usa:
+// define('GOOGLE_REDIRECT_URI', 'https://tudominio.com/backend/src/auth/google_callback.php');
 
 ?>
