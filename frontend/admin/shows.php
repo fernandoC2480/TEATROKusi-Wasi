@@ -1,6 +1,6 @@
 <?php 
 // 1. Conexión a la base de datos (Ruta corregida)
-require_once "../backend/src/config/database.php";
+require_once "../../backend/src/config/database.php";
 include 'header.php';
 
 $database = new Database();
@@ -62,6 +62,7 @@ $stmtShows->execute();
                             if(empty($row['foto1']) || !file_exists($img)) {
                                 $img = "../../assets/img/banner.png"; 
                             }
+                            
                         ?>
                         <tr class="<?php echo $row['estado'] == 0 ? 'table-secondary text-muted' : ''; ?>">
                             <td class="text-center">
@@ -80,8 +81,12 @@ $stmtShows->execute();
                             </td>
                             <td class="text-center">
                                 <div class="btn-group shadow-sm">
+                                    <a href="../pages/shows/show.php?id=<?php echo $row['id']; ?>" target="_blank" class="btn btn-sm btn-info" title="Ver en la web">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    
                                     <a href="procesar_show.php?accion=toggle&id=<?php echo $row['id']; ?>&estado=<?php echo $row['estado']; ?>" 
-                                       class="btn btn-sm <?php echo $row['estado'] == 1 ? 'btn-warning' : 'btn-success'; ?>">
+                                    class="btn btn-sm <?php echo $row['estado'] == 1 ? 'btn-warning' : 'btn-success'; ?>">
                                         <i class="fas <?php echo $row['estado'] == 1 ? 'fa-eye-slash' : 'fa-eye'; ?>"></i>
                                     </a>
                                     <button onclick="confirmarEliminar(<?php echo $row['id']; ?>)" class="btn btn-sm btn-danger">

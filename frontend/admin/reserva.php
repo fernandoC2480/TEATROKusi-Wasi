@@ -1,6 +1,6 @@
 <?php 
 // 1. Incluir archivos de configuración y conexión
-require_once "../backend/src/config/database.php";
+require_once "../../backend/src/config/database.php";
 include 'header.php'; // Tu sidebar y topbar
 
 // 2. Instanciar la base de datos

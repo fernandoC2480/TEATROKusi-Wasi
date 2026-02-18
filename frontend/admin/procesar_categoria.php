@@ -1,5 +1,5 @@
 <?php
-require_once "../backend/src/config/database.php";
+require_once "../../backend/src/config/database.php";
 $database = new Database();
 $db = $database->getConnection();
 

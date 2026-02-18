@@ -164,3 +164,35 @@
         text-align: center;
     }
 }
+
+.t-show {
+    font-family: 'Alegreya', serif;
+    font-weight: bold;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    color: #FF9B00;
+    margin: 30px 0;
+}
+
+#modalReserva .form-control, 
+#modalReserva .form-select {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+#modalReserva .form-control:focus, 
+#modalReserva .form-select:focus {
+    background-color: #444;
+    border-color: #D32213;
+    color: #fff;
+    box-shadow: 0 0 0 0.25rem rgba(211, 34, 19, 0.25);
+}
+
+#modalReserva .btn-reservar {
+    padding: 8px 25px;
+    font-size: 1rem;
+}
+
+#modalReserva .modal-dialog {
+    margin-top: 100px; 
+}

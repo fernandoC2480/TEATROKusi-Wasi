@@ -1,7 +1,7 @@
 <?php
 // 1. Usar ruta absoluta para evitar errores de archivos no encontrados
 
-require_once "../backend/src/config/database.php";
+require_once "../../backend/src/config/database.php";
 $database = new Database();
 $db = $database->getConnection();
 
