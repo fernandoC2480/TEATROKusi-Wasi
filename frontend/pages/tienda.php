@@ -1,7 +1,7 @@
 <?php 
 include '../includes/image_helper.php';
 include '../includes/header.php';
-include '../../backend/src/config/database.php';
+include '../backend/src/config/database.php';
 
 // Conectar a la base de datos
 $database = new Database();
