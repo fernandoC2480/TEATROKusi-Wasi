@@ -1,6 +1,6 @@
 <?php 
-include '../includes/header.php';
 include '../includes/image_helper.php';
+include '../includes/header.php';
 include '../../backend/src/config/database.php';
 
 // Conectar a la base de datos
@@ -46,14 +46,14 @@ $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+<link rel="stylesheet" href="../assets/css/cards.css">
+<link rel="stylesheet" href="../assets/css/estilos_flecha.css">
+<link rel="stylesheet" href="../assets/css/acordeon-tienda-categoria.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/cards.css">
-<link rel="stylesheet" href="../assets/css/estilos_flecha.css">
-<link rel="stylesheet" href="../../assets/css/acordeon-tienda-categoria.css">
- 
 <main>
     <!-- acordeon de categorias -->
     <div class="options">
@@ -216,5 +216,5 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
 <script src="../assets/js/scroll-arrow.js"></script>
-<script src="../../assets/js/acordeon_tienda.js"></script>
+<script src="../assets/js/acordeon_tienda.js"></script>
 <?php include '../includes/footer.php'; ?>

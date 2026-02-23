@@ -1,6 +1,7 @@
 <?php include '../includes/header.php'; ?>
 
-<link rel="stylesheet" href="/assets/css/historia.css">
+<link rel="stylesheet" href="../assets/css/historia.css">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- HERO / IMAGEN FULL WIDTH -->
 <section class="hero-historia">

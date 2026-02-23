@@ -1,6 +1,6 @@
 <?php include '../includes/header.php'; ?>
 <link rel="stylesheet" href="../assets/css/cartelera.css">
-<link rel="stylesheet" href="../../assets/css/estilos_flecha.css">
+<link rel="stylesheet" href="../assets/css/estilos_flecha.css">
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
 <main class="container my-5">
     <div>
