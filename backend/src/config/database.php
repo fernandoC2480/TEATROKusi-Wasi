@@ -1,9 +1,9 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "bdkusiwasi";
-    private $username = "root";
-    private $password = "";
+    private $db_name = "grupo_2025_II_8";
+    private $username = "usuario_grupo8";
+    private $password = "ftp@cceso";
     public $conn;
 
     public function getConnection() {

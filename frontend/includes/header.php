@@ -1,3 +1,7 @@
+<?php
+// base url de despliegue. ajustar si cambia el subdirectorio
+$baseUrl = '/2025_II/grupo8/frontend/';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>assets/css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Alegreya+Sans&display=swap" rel="stylesheet">
@@ -21,65 +25,65 @@
   <div class="header-bg">
     <div class="header-inner">
 
-      <a href="../../index.php" class="logo">
-        <img src="../../assets/img/logo.png" alt="Logo Kusiwasi">
+      <a href="<?= $baseUrl ?>index.php" class="logo">
+        <img src="<?= $baseUrl ?>assets/img/logo.png" alt="Logo Kusiwasi">
       </a>
 
       <nav class="nav">
         <ul class="nav-links">
 
           <li>
-            <a href="../../index.php"
+            <a href="<?= $baseUrl ?>index.php"
                class="<?= basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>">
               Inicio
             </a>
           </li>
 
           <li>
-            <a href="../../pages/cartelera.php"
+            <a href="<?= $baseUrl ?>pages/cartelera.php"
                class="<?= basename($_SERVER['PHP_SELF']) == 'cartelera.php' ? 'active' : '' ?>">
               Acciones Teatrales
             </a>
           </li>
 
           <li>
-            <a href="../../pages/tienda.php"
+            <a href="<?= $baseUrl ?>pages/tienda.php"
                class="<?= basename($_SERVER['PHP_SELF']) == 'tienda.php' ? 'active' : '' ?>">
               Tienda
             </a>
           </li>
 
           <li class="has-submenu">
-            <a href="../../pages/proyectos.php"
+            <a href="<?= $baseUrl ?>pages/proyectos.php"
                class="<?= in_array(basename($_SERVER['PHP_SELF']), ['proyectos.php','tallerteatro.php','tallermusica.php']) ? 'active' : '' ?>">
               Proyectos
             </a>
             <ul class="submenu">
-              <li><a href="../../pages/proyectos/tallerteatro.php">Taller de Teatro</a></li>
-              <li><a href="../../pages/proyectos/tallermusica.php">Taller de Música</a></li>
+              <li><a href="<?= $baseUrl ?>pages/proyectos/tallerteatro.php">Taller de Teatro</a></li>
+              <li><a href="<?= $baseUrl ?>pages/proyectos/tallermusica.php">Taller de Música</a></li>
             </ul>
           </li>
 
           <li class="has-submenu">
-            <a href="../../pages/historia.php"
+            <a href="<?= $baseUrl ?>pages/historia.php"
                class="<?= in_array(basename($_SERVER['PHP_SELF']), ['historia.php','misionvision.php']) ? 'active' : '' ?>">
               Nosotros
             </a>
             <ul class="submenu">
-              <li><a href="../../pages/historia.php">Historia</a></li>
-              <li><a href="../../pages/misionvision.php">Misión y Visión</a></li>
+              <li><a href="<?= $baseUrl ?>pages/historia.php">Historia</a></li>
+              <li><a href="<?= $baseUrl ?>pages/misionvision.php">Misión y Visión</a></li>
             </ul>
           </li>
 
           <li>
-            <a href="../../pages/legal.php"
+            <a href="<?= $baseUrl ?>pages/legal.php"
                class="<?= basename($_SERVER['PHP_SELF']) == 'legal.php' ? 'active' : '' ?>">
               Legal
             </a>
           </li>
 
           <li>
-            <a href="../../pages/contacto.php"
+            <a href="<?= $baseUrl ?>pages/contacto.php"
                class="<?= basename($_SERVER['PHP_SELF']) == 'contacto.php' ? 'active' : '' ?>">
               Contacto
             </a>
@@ -87,7 +91,7 @@
 
           <!-- Icono Login Desktop -->
           <li>
-            <a href="#" class="login-circle">
+            <a href="<?= $baseUrl ?>pages/login.php" class="login-circle">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                 <path fill-rule="evenodd"
@@ -109,8 +113,8 @@
     <i class="bi bi-list"></i>
   </button>
 
-  <a href="../../index.php" class="mobile-logo">
-    <img src="../../assets/img/logo.png" alt="Logo Kusiwasi">
+  <a href="<?= $baseUrl ?>index.php" class="mobile-logo">
+    <img src="<?= $baseUrl ?>assets/img/logo.png" alt="Logo Kusiwasi">
   </a>
 
   <div class="mobile-title">
@@ -119,7 +123,7 @@
       : ucfirst(str_replace('.php','',basename($_SERVER['PHP_SELF']))) ?>
   </div>
 
-  <a href="../../pages/login.php" class="btn btn-outline-warning mobile-login-btn">
+  <a href="<?= $baseUrl ?>pages/login.php" class="btn btn-outline-warning mobile-login-btn">
     <i class="bi bi-person"></i>
   </a>
 
@@ -129,25 +133,25 @@
 <nav class="mobile-nav">
   <ul class="mobile-menu">
 
-    <li><a href="../../index.php">Inicio</a></li>
-    <li><a href="../../pages/cartelera.php">Acciones Teatrales</a></li>
-    <li><a href="../../pages/tienda.php">Tienda</a></li>
+    <li><a href="<?= $baseUrl ?>index.php">Inicio</a></li>
+    <li><a href="<?= $baseUrl ?>pages/cartelera.php">Acciones Teatrales</a></li>
+    <li><a href="<?= $baseUrl ?>pages/tienda.php">Tienda</a></li>
 
     <li class="has-submenu">
-      <a href="../../pages/proyectos.php" class="submenu-toggle">Proyectos</a>
+      <a href="<?= $baseUrl ?>pages/proyectos.php" class="submenu-toggle">Proyectos</a>
       <ul class="submenu">
-        <li><a href="../../pages/proyectos.php">Proyectos</a></li>
-        <li><a href="../../pages/proyectos/tallerteatro.php">Taller de Teatro</a></li>
-        <li><a href="../../pages/proyectos/tallermusica.php">Taller de Música</a></li>
+        <li><a href="<?= $baseUrl ?>pages/proyectos.php">Proyectos</a></li>
+        <li><a href="<?= $baseUrl ?>pages/proyectos/tallerteatro.php">Taller de Teatro</a></li>
+        <li><a href="<?= $baseUrl ?>pages/proyectos/tallermusica.php">Taller de Música</a></li>
       </ul>
     </li>
 
     <li class="has-submenu">
-      <a href="../../pages/historia.php" class="submenu-toggle">Nosotros</a>
+      <a href="<?= $baseUrl ?>pages/historia.php" class="submenu-toggle">Nosotros</a>
       <ul class="submenu">
-        <li><a href="../../pages/historia.php">Nosotros</a></li>
-        <li><a href="../../pages/historia.php">Historia</a></li>
-        <li><a href="../../pages/misionvision.php">Misión y Visión</a></li>
+        <li><a href="<?= $baseUrl ?>pages/historia.php">Nosotros</a></li>
+        <li><a href="<?= $baseUrl ?>pages/historia.php">Historia</a></li>
+        <li><a href="<?= $baseUrl ?>pages/misionvision.php">Misión y Visión</a></li>
       </ul>
     </li>
 
@@ -156,4 +160,4 @@
 
 </header>
 
-<script src="../../assets/js/header.js"></script>
+<script src="<?= $baseUrl ?>assets/js/header.js"></script>

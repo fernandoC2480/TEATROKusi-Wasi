@@ -1,5 +1,9 @@
+<?php
+// base url de despliegue. ajustar si cambia el subdirectorio
+$baseUrl = '/2025_II/grupo8/frontend/';
+?>
 <footer class="site-footer">
-<link rel="stylesheet" href="../../assets/css/footer.css">    
+<link rel="stylesheet" href="<?= $baseUrl ?>assets/css/footer.css">    
     <!-- Franja de símbolos superior -->
     <div class="imgfooter"></div>
 

@@ -1,8 +1,16 @@
 <?php
-// Devuelve la ruta relativa (desde pages/) a la imagen del producto si existe
+
+// base url de despliegue. ajustar si cambia el subdirectorio
+$baseUrl = '/2025_II/grupo8/frontend/';
+
+// Devuelve la URL completa a la imagen del producto si existe (incluye
+// $baseUrl). Se utiliza gcc:
+//  - $imgDir para explorar el sistema de ficheros (sin baseUrl)
+//  - $relPrefix para construir la URL visible al cliente.
 function getProductImagePath($imagenCampo, $id, $nombre = '') {
+    global $baseUrl;
     $imgDir = realpath(__DIR__ . '/../assets/img');
-    $relPrefix = '../assets/img/';
+    $relPrefix = rtrim($baseUrl, '/') . '/assets/img/';
     $extensions = array('png','jpg','jpeg','svg','gif','webp');
 
     if (!$imgDir || !is_dir($imgDir)) {
@@ -97,5 +105,6 @@ function getProductImagePath($imagenCampo, $id, $nombre = '') {
         return $relPrefix . rawurlencode(basename($glob[0]));
     }
 
-    return $relPrefix . rawurlencode('placeholder.png');
+    // como última opción devolvemos un placeholder estático
+    return $relPrefix . 'placeholder.png';
 }

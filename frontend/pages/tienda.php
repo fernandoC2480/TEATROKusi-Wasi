@@ -1,5 +1,10 @@
 <?php 
 include '../includes/header.php';
+
+// baseUrl debe definirse antes de cargar el helper para que la función
+// lo pueda usar (usa variable global).
+$baseUrl = '/2025_II/grupo8/frontend/';
+
 include '../includes/image_helper.php';
 include '../../backend/src/config/database.php';
 
@@ -50,9 +55,9 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/cards.css">
-<link rel="stylesheet" href="../assets/css/estilos_flecha.css">
-<link rel="stylesheet" href="../../assets/css/acordeon-tienda-categoria.css">
+<link rel="stylesheet" href="<?= $baseUrl ?>assets/css/cards.css">
+<link rel="stylesheet" href="<?= $baseUrl ?>assets/css/estilos_flecha.css">
+<link rel="stylesheet" href="<?= $baseUrl ?>assets/css/acordeon-tienda-categoria.css">
  
 <main>
     <!-- acordeon de categorias -->
@@ -129,9 +134,13 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $producto['id'],
                 $producto['nombre']
             );
+            // aseguramos que la URL contenga la base
+            if (strpos($imgPath, $baseUrl) !== 0) {
+                $imgPath = rtrim($baseUrl, '/') . '/' . ltrim($imgPath, '/');
+            }
             ?>
 
-        <a href="producto.php?id=<?= $producto['id']; ?>" class="card">
+        <a href="<?= $baseUrl ?>pages/producto.php?id=<?= $producto['id']; ?>" class="card">
 
             <div class="card-inner">
                 <div class="box">
@@ -215,6 +224,6 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </main>
 
 <button class="scroll-arrow" id="scrollArrow" aria-label="Subir">↑</button>
-<script src="../assets/js/scroll-arrow.js"></script>
-<script src="../../assets/js/acordeon_tienda.js"></script>
-<?php include '../includes/footer.php'; ?>
+<script src="<?= $baseUrl ?>assets/js/scroll-arrow.js"></script>
+<script src="<?= $baseUrl ?>assets/js/acordeon_tienda.js"></script>
+<?php include 'includes/footer.php'; ?>
